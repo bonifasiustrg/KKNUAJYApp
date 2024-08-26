@@ -1,0 +1,262 @@
+﻿@* @model KKNUAJYApp.Models.Joke
+ *@
+ <header>
+     <style>
+        body {
+            background-color: #082f34;
+        }
+
+        .nav {
+            border-color: blue !important;
+        }
+            
+        .nav-link.active {
+            border-color: blue blue white !important;
+        }
+
+        .nav-link {
+            color: #082f34 !important;
+            font-weight: 700;
+        }
+
+            .nav-link:hover {
+                border-color: blue !important;
+            }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+        }
+
+            .card-title h3 {
+                flex-shrink: 0; /* Pastikan <h3> tidak menyusut */
+                margin-right: 10px; /* Opsional, untuk memberi jarak antara <h3> dan garis merah */
+                color: #0A5896;
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+        .yellowline,
+        .spacer {
+            width: 100%;
+            height: 3px;
+            display: inline;
+            border: 3px solid #F4AC1C
+            /* background-color: red; */
+        }
+
+        p, li {
+            font-size: 18px;
+        }
+        th {
+            color:blue;
+        }
+
+
+        .btn-primary {
+            background-color: ##0A5896;
+            border-color: #0A5896;
+            border-radius: 8px;
+        }
+
+        select {
+            padding: 8px;
+            border: none;
+            background-color: white;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        .icon-container {
+            display: flex;
+            border-left: 1px solid #ccc;
+        }
+
+        .icon {
+            padding: 8px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+            .icon.filter {
+                border-right: 1px solid #ccc;
+            }
+
+            .icon:hover {
+                background-color: #f0f0f0;
+            }
+    </style>
+ </header>
+
+<section class="content-header">
+    <div class="row mb-2 px-5">
+        <div class="col-sm-6">
+            <h1 style="font-weight:bold; color: #f4ac1c">DAFTAR KENDARAAN SEMASA KKN</h1>
+            <h4 style="font-weight:400">HOME/ DATA KENDARAAN KELOMPOK</h4>
+        </div>
+        <div class="col-sm-6">
+            @* <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Projects</li>
+            </ol> *@
+            <button type="button" class="float-sm-right btn btn-primary" data-toggle="modal" data-target="#modal-lg">Upload File</button>
+            <input type="file" id="fileInput" style="display: none;" />
+        </div>
+    </div>
+</section>
+<section class="py-8">
+    <div class="custom-div">
+        
+        <h6 style="font-weight: bold">Guidelines</h6>
+        <ol>
+            <li>
+                Kendaraan yang dapat didaftarkan selama Penerjunan maksimal berjumlah 3.
+            </li>
+            <li>
+                Kendaraan yang dapat didaftarkan selama Live-in maksimal berjumlah 5.
+
+            </li>
+        </ol>
+    </div>
+    <div class="py-5 px-5">
+        <div class="filter-container px-3">
+            <div class="filter-item">
+                <select>
+                    <option>Digunakan ketika</option>
+                </select>
+                <div class="icon-container">
+                    <span class="icon filter">&#9660;</span>
+                    <span class="icon clear">&#10005;</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 ">
+                <div class="bg-white rounded p-2">
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            
+                            <!-- Table row -->
+                            <div class="row">
+                            <div class="col-12 table-responsive">
+                                <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Merk Kendaraan</th>
+                                    <th>Plat Nomor</th>
+                                    <th>Digunakan ketika</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Call of Duty</td>
+                                    <td>455-981-221</td>
+                                    <td>El snort testosterone trophy driving gloves handsome</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Need for Speed IV</td>
+                                    <td>247-925-726</td>
+                                    <td>Wes Anderson umami biodiesel</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Monsters DVD</td>
+                                    <td>735-845-642</td>
+                                    <td>Terry Richardson helvetica tousled street art master</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Grown Ups Blue Ray</td>
+                                    <td>422-568-642</td>
+                                    <td>Tousled lomo letterpress</td>
+                                </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                            <!-- /.row -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Tab Panel Nav --> 
+</section>
+
+<!-- /.content -->
+<div class="modal fade" id="modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header py-2 px-4">
+                <h2 style="font-weight:600; color: #f4ac1c">UPLOAD TUGAS KELOMPOK</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+            <div class="card card-default">
+                <!-- /.card-header -->
+                <div class="card-body p-4">
+
+                    <!-- ROW1 -->
+                    <div class="row">
+                        <div class="col-12 col-sm-12">
+                            <div class="form-group">
+                                <label for="namaLengkap">JENIS KENDARAAN</label>
+                                <input type="text" class="form-control" id="namaLengkap" placeholder="Enter name">
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- ROW2 -->
+                    <div class="row">
+                        <div class="col-12 col-sm-12">
+                            <div class="form-group">
+                                <label for="namaLengkap">PLAT NOMOR</label>
+                                <input type="text" class="form-control" id="namaLengkap" placeholder="Enter name">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <!-- ROW3 -->
+                    <div class="row">
+                        <div class="col-12 col-sm-12">
+                            <!-- select -->
+                            <div class="form-group">
+                                <label>DIGUNAKAN PADA</label>
+                                <select class="form-control" placeholder="Digunakan pada">
+                                    <option value="katolik">Live in</option>
+                                    <option value="islam">Penerjemah</option>
+                                    <!-- Tambahkan opsi lain jika diperlukan -->
+                                </select>
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- /.row -->
+                    <div class="modal-footer justify-content-end py-2">
+                        <button type="button"  class="btn btn-primary btn-sm" id="">
+                            <a style="color:white" asp-area="" asp-controller="" asp-action=""> Submit </a>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

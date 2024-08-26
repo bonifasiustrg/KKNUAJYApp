@@ -1,0 +1,272 @@
+﻿@page
+@model RegisterModel
+@{
+    Layout = "_LayoutLogin";
+
+    ViewData["Title"] = "Register";
+}
+
+
+<style>
+    body {
+        background-color: #0066cc;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        width: 100%;
+        /* max-width: 1000px; */
+        margin: 0 auto; /* This will center the container */
+    }
+
+    .info-panel {
+        background-color: white;
+        padding: 40px;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: justify;
+    }
+
+        .info-panel img {
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .info-panel h2 {
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+
+        .info-panel p {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+    .helpdesk-link {
+        color: #0066cc;
+        text-decoration: none;
+    }
+
+    .login-form {
+        background-color: #F4AC1C;
+        padding: 40px;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: justify;
+    }
+
+        .login-form h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+    .form-group {
+        margin-bottom: 20px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .btn-primary {
+        background-color: #0066cc;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .motto {
+        color: white;
+        margin-top: 20px;
+        font-size: 0.9em;
+        color: black;
+        text-align: start;
+    }
+
+    .text-danger {
+        color: #ff0000;
+        font-size: 0.9em;
+    }
+
+    .separator {
+        margin: auto;
+        border: none; /* Menghapus border default */
+        height: 1px; /* Ketebalan garis */
+        background-color: lightgray; /* Warna garis */
+    }
+
+    .input-icon {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+        .input-icon i {
+            color: #aaa;
+            padding-left: 10px;
+        }
+
+        .input-icon .separator {
+            height: 24px; /* Sesuaikan dengan tinggi input field */
+            width: 1px;
+            background-color: #ccc;
+            margin: 0 10px;
+        }
+
+        .input-icon input {
+            padding-left: 10px; /* Jarak antara separator dan teks */
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius
+        }
+
+    .btn-primary {
+        padding: 10px 20px; /* Tambahkan padding sesuai kebutuhan untuk meningkatkan keterbacaan tombol */
+        border: none; /* Hapus border default */
+        border-radius: 5px; /* Sesuaikan border-radius untuk tampilan sudut yang melengkung */
+        background-color: #0066cc; /* Warna latar belakang tombol */
+        color: white; /* Warna teks tombol */
+        font-size: 16px; /* Ukuran font teks tombol */
+        cursor: pointer; /* Tunjukkan bahwa tombol dapat diklik */
+        display: inline-block; /* Mengatur tombol agar hanya selebar isi konten */
+        text-align: center; /* Pusatkan teks di dalam tombol */
+    }
+
+</style>
+
+@* <h1>@ViewData["Title"]</h1> *@
+<div class="login-container">
+    <div class="info-panel">
+        <img src="~/img/logo2.png" alt="UNIVERSITAS ATMA JAYA YOGYAKARTA" />
+        <h2 style="color:black; font-weight:600">SI KKN UAJY</h2>
+        <p>SI KKN UAJY adalah sistem yang berfungsi untuk manajemen data yang berkaitan dengan kegiatan KKN UAJY. Setiap mahasiswa dapat mendapat informasi, mengumpulkan tugas, dan mengunduh sertifikat ketika kegiatan KKN telah selesai.</p>
+        @* <div class="separator"></div> *@
+
+        <a href="#" class="helpdesk-link">KSI Helpdesk disini</a>
+    </div>
+    <div class="login-form">
+        <h2 style="font-weight:600; color: black;">Register</h2>
+        <form id="account" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-group">
+                <div class="input-icon">
+                    <i class="fas fa-user"></i>
+                    <span class="separator"></span>
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="NPM" />
+                </div>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="input-icon">
+                    <i class="fas fa-lock"></i>
+                    <span class="separator"></span>
+                    <input asp-for="Input.Password" type="password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Password" />
+                </div>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="input-icon">
+                    <i class="fas fa-lock"></i>
+                    <span class="separator"></span>
+                    <input asp-for="Input.Password" type="password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Confirm Password" />
+                </div>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button id="login-submit" type="submit" class="btn btn-primary btn-sm" asp-area="" asp-controller="Home" asp-action="Dashboard">">REGISTER</button>
+            </div>
+        </form>
+        <div class="motto">
+            UNGGUL - INKLUSIF - HUMANIS - BERINTEGRITAS
+        </div>
+    </div>
+</div>
+
+
+@* <h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h2>Create a new account.</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                <label asp-for="Input.Email">Email</label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label asp-for="Input.Password">Password</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+        </form>
+    </div>
+    <div class="col-md-6 col-md-offset-2">
+        <section>
+            <h3>Use another service to register.</h3>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
+                            about setting up this ASP.NET application to support logging in via external services</a>.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>
+</div> *@
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

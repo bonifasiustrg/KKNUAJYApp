@@ -1,0 +1,529 @@
+﻿@* @model KKNUAJYApp.Models.Joke
+ *@
+@* <section class="content-header">
+</section>
+ *@
+<!-- Main content -->
+<section class="content" id="contentSection">
+        <div class="row mb-2 px-5">
+            <div class="col-sm-6">
+            <h1 style="font-weight:bold; color: #f4ac1c">PENDAFTARAN KKN PERIODE XX</h1>
+            <h4 style="font-weight:400">HOME / FORMULIR PENDAFTARAN KKN JAWA</h4>
+            </div>
+        </div>
+    <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+        <!-- /.card-header -->
+        <div class="card-body p-5">
+            <!-- ROW1 -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="namaLengkap">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="namaLengkap" placeholder="Enter name">
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-md-4">
+                    <label for="gender">Gender</label>
+
+                    <!-- radio -->
+                    <div class="form-group row px-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio1">
+                            <label class="form-check-label">Laki-laki</label>
+                        </div>
+                        <div class="form-check ml-4">
+                            <input class="form-check-input" type="radio" name="radio1" checked>
+                            <label class="form-check-label">Perempuan</label>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <!-- select -->
+                    <div class="form-group">
+                        <label>Agama</label>
+                        <select class="form-control">
+                            <option value="katolik" selected>Katolik</option>
+                            <option value="islam">Islam</option>
+                            <option value="protestan">Protestan</option>
+                            <option value="hindu">Hindu</option>
+                            <option value="budha">Budha</option>
+                            <option value="khonghucu">Khonghucu</option>
+                            <!-- Tambahkan opsi lain jika diperlukan -->
+                        </select>
+                    </div>
+                    <!-- /.form-group -->
+                </div>  
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+            <!-- ROW2 -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="npm">NPM</label>
+                        <input type="number" class="form-control" id="npm" placeholder="Enter npm" min="1">
+                    </div>
+                </div>
+                
+
+                <div class="col-md-4">
+                    <!-- select -->
+                    <!-- Fakultas Dropdown -->
+                    <div class="form-group">
+                        <label>Pilih Fakultas</label>
+                        <select id="fakultas" class="form-control">
+                            <option value="fakultas_teknik">Fakultas Teknik</option>
+                            <option value="fakultas_ekonomi">Fakultas Ekonomi</option>
+                            <option value="fakultas_hukum">Fakultas Hukum</option>
+                            <option value="fakultas_psikologi">Fakultas Psikologi</option>
+                            <option value="fakultas_arsitektur">Fakultas Arsitektur</option>
+                            <option value="fakultas_ilmu_kesehatan">Fakultas Ilmu Kesehatan</option>
+                            <option value="fakultas_seni_rupa_dan_desain">Fakultas Seni Rupa dan Desain</option>
+                        </select>
+                    </div>
+                    <!-- /.form-group -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Pilih Jurusan</label>
+                        <select id="jurusan" class="form-control">
+                            <!-- Options will be populated based on selected faculty -->
+                        </select>
+                    </div>
+
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+            <!-- ROW3 -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="semester">Semester</label>
+                        <input type="number" class="form-control" id="semester" name="semester" placeholder="Masukkan semester" min="1" max="14">
+                    </div>
+
+                </div>
+                <!-- /.col -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="ipk">IPK</label>
+                        <input type="number" class="form-control" id="ipk" name="ipk" placeholder="3.8" min="1" max="4" step="0.01">
+                    </div>
+
+
+                </div>
+                <!-- /.col -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="sks">Total SKS Ditempuh</label>
+                        <input type="number" class="form-control" id="sks" name="semester" placeholder="Total SKS Ditempuh" min="1" max="200">
+                    </div>
+
+
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+            <!-- ROW4 -->
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Kartu Tanda Mahasiswa (KTM)</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-12 col-sm-6">
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Bukti Pembayaran Kelas</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+            <!-- ROW5 -->
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Bukti Pembayaran KKN</label>
+                        <input class="form-control" type="file" id="formFile" placeholder="Drop files here to upload">
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+            <!-- ROW6 -->
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="notelp">Nomor Telepon Orang Tua</label>
+                        <input type="tel" class="form-control" id="notelp" placeholder="Nomor Telepon Orang Tua">
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="notelp">Nomor Telepon (WA)</label>
+                        <input type="tel" class="form-control" id="notelp" placeholder="Nomor Telepon (WA)">
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+            <!-- ROW7 -->
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="tgllahir">Tempat & Tanggal Lahir</label>
+                        <input type="text" class="form-control" id="tgllahir" placeholder="Sleman, 15 Mei 2001">
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="asal">Asal Daerah</label>
+                        <input type="text" class="form-control" id="asal" placeholder="Yogyakarta">
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+            <!-- ROW8 -->
+            <div class="row">
+                <div class="col-12 col-sm-12">
+                    <!-- select -->
+                    <div class="form-group">
+                        <label for="daerahKKN">Daerah KKN yang diminati</label>
+                        <select class="form-control">
+                            <option value="menteng">Menteng</option>
+                            <option value="cilandak">Cilandak</option>
+                            <option value="kemang">Kemang</option>
+                            <option value="jakarta_pusat">Jakarta Pusat</option>
+                            <option value="jakarta_selatan">Jakarta Selatan</option>
+                            <option value="jakarta_utara">Jakarta Utara</option>
+                            <option value="jakarta_barat">Jakarta Barat</option>
+                            <option value="depok">Depok</option>
+                            <option value="bekasi">Bekasi</option>
+                            <option value="tangerang">Tangerang</option>
+                            <!-- Tambahkan opsi lain jika diperlukan -->
+                        </select>
+                    </div>
+                    <!-- /.form-group -->
+                </div>
+
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+            <!-- ROW9 -->
+            <div class="row">
+                <div class="col-12 col-sm-12">
+                    <!-- textarea -->
+                    <div class="form-group">
+                        <label>Alamat Di Yogyakarta</label>
+                        <textarea class="form-control" rows="5" placeholder="Alamat Di Yogyakarta"></textarea>
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+            <!-- ROW10 -->
+            <div class="row">
+                <div class="col-12 col-sm-1">
+                    <button type="button" class="btn btn-block btn-primary btn-sm">Submit</button>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+        </div>
+    </div>
+    <!-- /.card -->
+
+
+    <!-- /.content -->
+    <div class="modal fade" id="modal-sm">
+        <div class=modal-dialog modal-dialog-centered modal-m">
+            <div class="modal-content">
+                <div class="modal-header py-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body py-0">
+                    <p>Form Penilaian hanya dapat diisi sekali. Apakah anda yakin ingin mengirimkan data penilaian tersebut?</p>
+                </div>
+                <div class="modal-footer justify-content-end py-2">
+                            @* <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> *@
+                    <button type="button" class="btn btn-primary btn-sm toastrDefaultSuccess" id="confirmButton">Confirm</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</section>
+
+
+
+
+
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+<script>
+    $(function () {
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+
+        $('.swalDefaultSuccess').click(function () {
+            Toast.fire({
+                icon: 'success',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.swalDefaultInfo').click(function () {
+            Toast.fire({
+                icon: 'info',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.swalDefaultError').click(function () {
+            Toast.fire({
+                icon: 'error',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.swalDefaultWarning').click(function () {
+            Toast.fire({
+                icon: 'warning',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.swalDefaultQuestion').click(function () {
+            Toast.fire({
+                icon: 'question',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+
+        $('.toastrDefaultSuccess').click(function () {
+            toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultInfo').click(function () {
+            toastr.info('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultError').click(function () {
+            toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultWarning').click(function () {
+            toastr.warning('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+
+        $('.toastsDefaultDefault').click(function () {
+            $(document).Toasts('create', {
+                title: 'Toast Title',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultTopLeft').click(function () {
+            $(document).Toasts('create', {
+                title: 'Toast Title',
+                position: 'topLeft',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultBottomRight').click(function () {
+            $(document).Toasts('create', {
+                title: 'Toast Title',
+                position: 'bottomRight',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultBottomLeft').click(function () {
+            $(document).Toasts('create', {
+                title: 'Toast Title',
+                position: 'bottomLeft',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultAutohide').click(function () {
+            $(document).Toasts('create', {
+                title: 'Toast Title',
+                autohide: true,
+                delay: 750,
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultNotFixed').click(function () {
+            $(document).Toasts('create', {
+                title: 'Toast Title',
+                fixed: false,
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultFull').click(function () {
+            $(document).Toasts('create', {
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                icon: 'fas fa-envelope fa-lg',
+            })
+        });
+        $('.toastsDefaultFullImage').click(function () {
+            $(document).Toasts('create', {
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                image: '../../dist/img/user3-128x128.jpg',
+                imageAlt: 'User Picture',
+            })
+        });
+        $('.toastsDefaultSuccess').click(function () {
+            $(document).Toasts('create', {
+                class: 'bg-success',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultInfo').click(function () {
+            $(document).Toasts('create', {
+                class: 'bg-info',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultWarning').click(function () {
+            $(document).Toasts('create', {
+                class: 'bg-warning',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultDanger').click(function () {
+            $(document).Toasts('create', {
+                class: 'bg-danger',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultMaroon').click(function () {
+            $(document).Toasts('create', {
+                class: 'bg-maroon',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+    });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+    document.getElementById("confirmButton").addEventListener("click", function () {
+        console.log("Confirm button clicked"); // Debugging line
+        // Menyembunyikan modal
+        $('#modal-sm').modal('hide');
+        // Menghapus elemen overlay
+        var backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+            backdrop.remove();
+        }
+        // Mengganti konten section dengan pesan
+        document.getElementById("contentSection").innerHTML = `
+            <div class="custom-div">
+                <h1>Form Penilaian sudah terisi!</h1>
+                <p>Anda tidak dapat mengubah atau memasukkan penilaian kelompok lagi.</p>
+            </div>
+        `;
+
+        // Menampilkan toast
+        toastr.success('Form Penilaian sudah terisi!', 'Sukses');
+    });
+
+</script>
+
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        const fakultasDropdown = document.getElementById('fakultas');
+        const jurusanDropdown = document.getElementById('jurusan');
+
+        const jurusanOptions = {
+            fakultas_teknik: [
+                "Teknik Informatika",
+                "Teknik Elektro",
+                "Teknik Sipil"
+            ],
+            fakultas_ekonomi: [
+                "Manajemen",
+                "Akuntansi",
+                "Ekonomi Pembangunan"
+            ],
+            fakultas_hukum: [
+                "Hukum",
+                "Hukum Bisnis",
+                "Hukum Internasional"
+            ],
+            fakultas_psikologi: [
+                "Psikologi",
+                "Psikologi Pendidikan",
+                "Psikologi Klinis"
+            ],
+            fakultas_arsitektur: [
+                "Arsitektur",
+                "Desain Interior",
+                "Perencanaan Kota"
+            ],
+            fakultas_ilmu_kesehatan: [
+                "Kedokteran",
+                "Farmasi",
+                "Keperawatan"
+            ],
+            fakultas_seni_rupa_dan_desain: [
+                "Desain Komunikasi Visual",
+                "Desain Produk",
+                "Seni Rupa"
+            ]
+        };
+
+        fakultasDropdown.addEventListener('change', function () {
+            const selectedFakultas = fakultasDropdown.value;
+            const jurusan = jurusanOptions[selectedFakultas] || [];
+
+            jurusanDropdown.innerHTML = '<option value="">Pilih Jurusan</option>'; // Reset dropdown
+
+            jurusan.forEach(jurusanItem => {
+                const option = document.createElement('option');
+                option.value = jurusanItem.toLowerCase().replace(/\s+/g, '_');
+                option.textContent = jurusanItem;
+                jurusanDropdown.appendChild(option);
+            });
+        });
+    });
+</script>
+    

@@ -1,0 +1,220 @@
+﻿@* @model KKNUAJYApp.Models.Joke
+ *@
+<header>
+    <style>
+        body {
+            background-color: #082f34;
+        }
+
+        .nav {
+            border-color: blue !important;
+        }
+
+        .nav-link.active {
+            border-color: blue blue white !important;
+        }
+
+        .nav-link {
+            color: #082f34 !important;
+            font-weight: 700;
+        }
+
+            .nav-link:hover {
+                border-color: blue !important;
+            }
+
+
+        p, li {
+            font-size: 18px;
+        }
+
+        th {
+            color: blue;
+        }
+
+        .box__dragndrop,
+        .box__uploading,
+        .box__success,
+        .box__error {
+            display: none;
+        }
+    </style>
+</header>
+
+<section class="content-header">
+        <div class="row mb-2 px-5">
+            <div class="col-sm-6">
+                <h1 style="font-weight:bold; color: #f4ac1c">Permohonan TTD Blanko</h1>
+                <h4 style="font-weight:400">HOME/TTD BLANKO BLANKO</h4>
+            </div>
+            <div class="col-sm-6">
+                @* <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Projects</li>
+                </ol> *@
+            </div>
+
+        </div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="py-5 px-5">
+        <div class="custom-div">
+
+            <h6 style="font-weight: bold">Guidelines</h6>
+            <ol>
+                <li>
+                    Kendaraan yang dapat didaftarkan selama Penerjunan maksimal berjumlah 3.
+                </li>
+                <li>
+                    Kendaraan yang dapat didaftarkan selama Live-in maksimal berjumlah 5.
+
+                </li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-12 ">
+                <div class="bg-white rounded p-2">
+
+                    <div class="row">
+                        <div class="col-12">
+
+
+                            <div class="col-12 table-responsive">
+                                <table class="table table-stripped">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Blanko</th>
+                                            <th>Upload</th>
+                                            <th>Status</th>
+                                            <th>Download</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1. </td>
+                                            <td>Blanko 01</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-lg">Upload File</button>
+                                                <input type="file" id="fileInput" style="display: none;" />
+
+                                            </td>
+                                            <td>-</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-success">Download</button>
+
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td>1. </td>
+                                            <td>Blanko 01</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-lg">Upload File</button>
+                                                <input type="file" id="fileInput" style="display: none;" />
+
+                                            </td>
+                                            <td>-</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary btn-sm disabled">Download</button>
+
+                                            </td>
+
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /modal for download -->
+<div class="modal fade" id="modal-success">
+    <div class="modal-dialog">
+        <div class="modal-content bg-white">
+            <div class="modal-header">
+                <button type="button" class="close top-0 end-0" style="border: none; background-color:transparent" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <i class="fas fa-check-circle text-success fa-2x mb-3"></i>
+                <h6 class="text-success mb-3 text-success" style="font-weight:bold">SUCCESS</h6>
+                <p>Your file is being downloaded.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- /modal for upload -->
+<div class="modal fade" id="modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header py-2 px-4">
+                <h2 style="font-weight:600; color: #f4ac1c">UPLOAD DATA BLANKO</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+            <div class="card card-default">
+                <!-- /.card-header -->
+                <div class="card-body p-4">
+
+                    <!-- ROW1 -->
+                    @* <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <form class="box" method="post" action="" enctype="multipart/form-data">
+                                <div class="box__input">
+                                    <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
+                                    <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+                                    <button class="box__button" type="submit">Upload</button>
+                                </div>
+                                <div class="box__uploading">Uploading…</div>
+                                <div class="box__success">Done!</div>
+                                <div class="box__error">Error! <span></span>.</div>
+                            </form>
+                        </div>
+                        <!-- /.col -->
+                    </div> *@
+                    <!-- /.row -->
+                    <!-- ROW3 -->
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">LAPORAN (POF)</label>
+                                <input class="form-control" type="file" id="formFile" placeholder="Drop files here to upload">
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- /.row -->
+                    <div class="modal-footer justify-content-end py-2">
+                        <button type="button" asp-area="" asp-controller="Home" asp-action="TugasKelompokContent" class="btn btn-primary btn-sm" id="">
+                            <a style="color:white" asp-area="" asp-controller="Home" asp-action="TugasKelompokContent"> Submit </a>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

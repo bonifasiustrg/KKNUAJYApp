@@ -1,0 +1,242 @@
+﻿@* @model KKNUAJYApp.Models.Joke
+ *@
+ <header>
+     <style>
+        body {
+            background-color: #082f34;
+        }
+
+
+        .nav-link.active {
+            /* border-color: blue blue white !important; */
+            border-radius: 8px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .nav-link {
+            color: #082f34 !important;
+            font-weight: 700;
+            width: 300px;
+        }
+
+            .nav-link:hover {
+                /* border-color: blue !important; */
+                background-color: white;
+                border-radius: 8px;
+            }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+        }
+
+            .card-title h3 {
+                flex-shrink: 0; /* Pastikan <h3> tidak menyusut */
+                margin-right: 10px; /* Opsional, untuk memberi jarak antara <h3> dan garis merah */
+                color: #0A5896;
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+        .yellowline,
+        .spacer {
+            width: 100%;
+            height: 3px;
+            display: inline;
+            border: 3px solid #F4AC1C
+            /* background-color: red; */
+        }
+
+        p, li {
+            font-size: 18px;
+        }
+
+    </style>
+ </header>
+
+<section class="py-8">
+    <div class="container-fluid px-0">
+        <div class="px-0 ps-md-12 bg-primary overflow-hidden rounded">
+            <div class="row no-gutters">
+                <div class="col-12 col-md-12 d-flex align-items-center justify-content-center" style="padding-top: 40px; padding-bottom: 40px; background-color: #335da4">
+                    <h2 class="mb-2 text-center" style="font-weight: 600; color: #F4AC1C;">
+                        PROFIL MAHASISWA
+                    </h2>
+                </div>  
+            </div>
+        </div>
+        @* <button type="button" class="btn btn-success toastrDefaultSuccess">
+            Launch Success Toast
+        </button> *@
+    </div>
+
+    <div class="pb-5 px-5" >
+        <div class="row">
+            <div class="col-12" >
+                <div class="rounded" style="background-color: #f3f4fa;">
+                    <ul class="nav nav-tabs justify-content-center py-2" style="background-color: #e5e5e5;   border-radius: 8px;">
+                        <li class="nav-item">
+                            <a class="nav-link text-center active" data-bs-toggle="tab" href="#data_diri">Data Diri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" data-bs-toggle="tab" href="#lokasi">Lokasi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" data-bs-toggle="tab" href="#data_kelompok">Data Kelompok</a>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="tab-content p-4 ">
+                                <div id="data_diri" class="tab-pane fade show active">
+                                    <div class="row flex-column justify-content-center text-center">
+
+                                        <div class="card-title" style="justify-content: space-between">
+                                            <h3 class="mb-0">Informasi Data Diri</h3>
+                                            <button class="btn btn-primary float-sm-right" style="background-color: #0A5896;">
+                                                <a style="color:white" asp-area="" asp-page="">Cetak Sertifikat</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">   
+                                        <div class="col-md-3 border-right">
+                                            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="250"><span class="font-weight-bold">John Doe</span><span class="text-black-50">john_doe12@bbb.com</span><span>United States</span></div>
+                                        </div>
+                                        <div class="col-md-9">
+                                                <div class="row mt-5">
+                                                    <div class="col-md-12">
+                                                        <h6 style="font-weight:bold">Nama</h6>
+                                                    <input type="text" class="form-control mb-4" placeholder="nama" value="John Michael Smith">
+                                                </div>
+                                                    <div class="col-md-12">
+                                                        <h6 style="font-weight:bold">NPM</h6>
+                                                    <input type="text" class="form-control  mb-4" placeholder="npm" value="200756789">
+                                                    </div>
+                                                        <div class="col-md-12">
+                                                            <h6 style="font-weight:bold">Fakultas</h6>
+                                                    <input type="text" class="form-control mb-4" placeholder="fakultas" value="Teknik">
+                                                    </div>
+                                                        <div class="col-md-12">
+                                                            <h6 style="font-weight:bold">Prodi</h6>
+                                                    <input type="text" class="form-control mb-4" placeholder="prodi" value="Arsitektur">
+                                                    </div>
+                                                    
+                                                </div>
+                                            <div class="mt-5 text-right"><button class="btn btn-primary profile-button" style="background-color: #0A5896; type="button">Save Profile</button></div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div id="lokasi" class="tab-pane fade">
+                                    <div class="row flex-column justify-content-center text-center">
+
+                                        <div class="card-title" style="justify-content: space-between">
+                                            <h3 class="mb-0">Informasi Lokasi KKN</h3>
+                                            <button class="btn btn-primary float-sm-right" style="background-color: #0A5896;">
+                                                <a style="color:white" asp-area="" asp-page=""> Potensi Desa </a>
+                                            </button>
+                                        </div>
+                                        <p class="text-left">
+                                            Kandri, Pucung, Girisubo, Gunung Kidul, DI Yogyakarta
+                                        </p>
+
+                                        <div class="card p-3" style="background-color:white; width: 60%; max-width: 80vw; margin: 0 auto;">
+                                            <div class="col-md-12">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2646.2531389455903!2d-89.23024619999998!3d48.4516724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d5923dbfe697737%3A0xc9d925c9bc9573fa!2s116+Bruce+St%2C+Thunder+Bay%2C+ON+P7A+5W6!5e0!3m2!1sen!2sca!4v1424272264157" style="border:0; width: 100%; aspect-ratio: 16/9;"></iframe>
+                                            </div>
+                                        </div>  
+                                    </div>
+
+                                </div>
+
+                                <div id="data_kelompok" class="tab-pane fade show">
+                                    <div class="row flex-column">
+                                        <div class="card-title">
+                                            <h3 class="mb-0">Informasi Data Kelompok</h3>
+                                        </div>
+
+                                        <div class="card-header">
+                                            <h3 class="card-title">Unit X  Kelompok X    ADPL:sudahpastisaya   DPL: sudahpastisayajuga  </h3>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <div class="card-body p-0">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Nama</th>
+                                                        <th>NPM</th>
+                                                        <th>Program Studi</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>John Michael Smith</td>
+                                                        <td>200756789</td>
+                                                        <td>Arsitektur</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>John Michael Smith</td>
+                                                        <td>200756789</td>
+                                                        <td>Arsitektur</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>John Michael Smith</td>
+                                                        <td>200756789</td>
+                                                        <td>Arsitektur</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>John Michael Smith</td>
+                                                        <td>200756789</td>
+                                                        <td>Arsitektur</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>John Michael Smith</td>
+                                                        <td>200756789</td>
+                                                        <td>Arsitektur</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>John Michael Smith</td>
+                                                        <td>200756789</td>
+                                                        <td>Arsitektur</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>John Michael Smith</td>
+                                                        <td>200756789</td>
+                                                        <td>Arsitektur</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>John Michael Smith</td>
+                                                        <td>200756789</td>
+                                                        <td>Arsitektur</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>John Michael Smith</td>
+                                                        <td>200756789</td>
+                                                        <td>Arsitektur</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>John Michael Smith</td>
+                                                        <td>200756789</td>
+                                                        <td>Arsitektur</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>John Michael Smith</td>
+                                                        <td>200756789</td>
+                                                        <td>Arsitektur</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- /.card-body -->
+                                    </div>
+                                    <!-- /.card -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Tab Panel Nav --> 
+</section>

@@ -1,0 +1,234 @@
+﻿@* @model KKNUAJYApp.Models.Joke
+ *@
+<header>
+
+    <style>
+        body {
+            background-color: #082f34;
+        }
+
+        .nav {
+            border-color: blue !important;
+        }
+
+        .nav-link.active {
+            border-color: blue blue white !important;
+        }
+
+        .nav-link {
+            color: #082f34 !important;
+            font-weight: 700;
+        }
+
+            .nav-link:hover {
+                border-color: blue !important;
+            }
+
+
+        p, li {
+            font-size: 18px;
+        }
+
+        th {
+            color: blue;
+        }
+
+        tbody {
+            padding:0;
+            margin: 0;
+        }
+
+
+        .btn-primary {
+            background-color: ##0A5896;
+            border-color: #0A5896;
+            border-radius: 8px;
+        }
+
+        .custom-div {
+            padding:16px;
+            width: 100%; 
+            margin:24px;
+            color: #0C6BB7; 
+            gap: var(--kendo-spacing-0);
+            border: 0px 0px 0px 4px;
+            text-align: start;
+            background: rgba(189, 224, 251, 0.5);
+            border-left: 4px solid var(--Primary-Primary200, #BDE0FB);
+
+        }
+        .custom-div h1 {
+            font-size: 64px;
+        }
+    </style>
+
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</header>
+
+@* <section class="content-header">
+</section>
+ *@
+<!-- Main content -->
+<section class="content" id="contentSection">
+        <div class="row mb-2 px-5">
+            <div class="col-sm-6">
+                <h1 style="font-weight:bold; color: #f4ac1c">PENILAIAN KELOMPOK</h1>
+                <h4 style="font-weight:400">HOME/PENILAIAN ANTAR ANGGOTA</h4>
+            </div>
+        </div>
+    <div class="py-5 px-5">
+        <div class="custom-div">
+
+            <h6 style="font-weight: bold">Guidelines</h6>
+            <ol>
+                <li>
+                    Kendaraan yang dapat didaftarkan selama Penerjunan maksimal berjumlah 3.
+                </li>
+                <li>
+                    Kendaraan yang dapat didaftarkan selama Live-in maksimal berjumlah 5.
+
+                </li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-12 mx-4">
+
+                <div class="bg-white rounded p-2"">
+                    <div class="row">
+                        
+                            <div class="card col-12">
+                                <div class="card-header">
+                                    @* <h3 class="card-title">Simple Full Width Table</h3> *@
+                                    <h2>Form Penilaian Kelompok</h2>
+
+                                    @* <div class="card-tools">
+                                        <ul class="pagination pagination-sm float-right">
+                                            <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                                        </ul>
+                                    </div> *@
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body p-0">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Nama</th>
+                                                <th>NPM</th>
+                                                <th>Penilaian Kerja 1-100</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Bonifasius</td>
+                                                <td>1301213235</td>
+                                                <td>
+                                                    <div class="">
+                                                    <input style="border-color: black; height: 75%;" type="number" class="form-control" placeholder="Berikan nilai 1-100!" min="1" max="100" step="1">
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>Bonifasius</td>
+                                                <td>1301213235</td>
+                                                <td>
+                                                    <div class="form-group">
+                                                    <input style="border-color: black; height: 75%;" type="number" class="form-control" placeholder="Berikan nilai 1-100!" min="1" max="100" step="1">
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>Bonifasius</td>
+                                                <td>1301213235</td>
+                                                <td>
+                                                    <div class="form-group">
+                                                    <input style="border-color: black; height: 75%;" type="number" class="form-control" placeholder="Berikan nilai 1-100!" min="1" max="100" step="1">
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div >
+                                        <button style="margin-right: 18px; margin-bottom: 18px;" type="button" class="float-sm-right btn btn-primary" data-toggle="modal" data-target="#modal-sm">
+                                            Upload
+                                        </button>
+                                    </div>
+
+                                    
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /.content -->
+    <div class="modal fade" id="modal-sm">
+        <div class=modal-dialog modal-dialog-centered modal-m">
+            <div class="modal-content">
+                <div class="modal-header py-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body py-0">
+                    <p>Form Penilaian hanya dapat diisi sekali. Apakah anda yakin ingin mengirimkan data penilaian tersebut?</p>
+                </div>
+                <div class="modal-footer justify-content-end py-2">
+                            @* <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> *@
+                    <button type="button" class="btn btn-primary btn-sm toastrDefaultSuccess" id="confirmButton">Confirm</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</section>
+
+
+
+
+<script>
+    document.getElementById("confirmButton").addEventListener("click", function () {
+        console.log("Confirm button clicked"); // Debugging line
+        // Menyembunyikan modal
+        $('#modal-sm').modal('hide');
+        // Menghapus semua elemen overlay
+        var backdrops = document.querySelectorAll('.modal-backdrop');
+        backdrops.forEach(function (backdrop) {
+            backdrop.remove();
+        });
+        // Mengganti konten section dengan pesan
+        document.getElementById("contentSection").innerHTML = `
+            <div class="custom-div">
+                <h1>Form Penilaian sudah terisi!</h1>
+                <p>Anda tidak dapat mengubah atau memasukkan penilaian kelompok lagi.</p>
+            </div>
+        `;
+
+        // Menampilkan toast
+        toastr.success('Form Penilaian sudah terisi!', 'Sukses');
+    });
+
+
+</script>

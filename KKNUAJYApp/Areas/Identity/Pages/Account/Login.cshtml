@@ -1,0 +1,283 @@
+﻿@page
+@model LoginModel
+
+@{
+    Layout = "_LayoutLogin";
+    ViewData["Title"] = "Log in";
+}
+
+<style> 
+    body {
+        background-color: #0a5896;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        width: 100%;
+        /* max-width: 1000px; */
+        margin: 0 auto; /* This will center the container */
+    }
+
+    .info-panel {
+        background-color: white;
+        padding: 40px;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: justify;
+    }
+
+        .info-panel img {
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .info-panel h2 {
+            color: #0a5896;
+            margin-bottom: 20px;
+        }
+
+        .info-panel p {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+    .helpdesk-link {
+        color: #0a5896;
+        text-decoration: none;
+    }
+
+    .login-form {
+        background-color: #F4AC1C;
+        padding: 40px;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: justify;
+    }
+
+    .login-form h6 {
+            align-items: start;
+            text-align: start;
+            font-weight:600;
+            margin-top:36px;
+    }
+
+        .login-form h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+    .form-group {
+        margin-bottom: 20px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+
+
+    .motto {
+        color: white;
+        margin-top: 20px;
+        font-size: 0.9em;
+        color: black;
+        text-align: start;
+    }
+
+    .text-danger {
+        color: #ff0000;
+        font-size: 0.9em;
+    }
+
+    .separator {
+        margin: auto;
+        border: none; /* Menghapus border default */
+        height: 1px; /* Ketebalan garis */
+        background-color: lightgray; /* Warna garis */
+    }
+
+    .input-icon {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+        .input-icon i {
+            color: #aaa;
+            padding-left: 10px;
+        }
+
+        .input-icon .separator {
+            height: 24px; /* Sesuaikan dengan tinggi input field */
+            width: 1px;
+            background-color: #ccc;
+            margin: 0 10px;
+        }
+
+        .input-icon input {
+            padding-left: 10px; /* Jarak antara separator dan teks */
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius
+        }
+
+    .btn-primary {
+        border: none; /* Hapus border default */
+        border-radius: 5px; /* Sesuaikan border-radius untuk tampilan sudut yang melengkung */
+        background-color: #0a5896; /* Warna latar belakang tombol */
+        color: white; /* Warna teks tombol */
+        margin: 8px;
+        font-size: 12px; /* Ukuran font teks tombol */
+        cursor: pointer; /* Tunjukkan bahwa tombol dapat diklik */
+        display: inline-block; /* Mengatur tombol agar hanya selebar isi konten */
+        text-align: center; /* Pusatkan teks di dalam tombol */
+    }
+
+</style>
+
+@* <h1>@ViewData["Title"]</h1> *@
+<div class="login-container">
+    <div class="info-panel">
+        <img src="~/img/logo2.png" alt="UNIVERSITAS ATMA JAYA YOGYAKARTA" />
+        <h2 style="color:black; font-weight:600">SI KKN UAJY</h2>
+        <p>SI KKN UAJY adalah sistem yang berfungsi untuk manajemen data yang berkaitan dengan kegiatan KKN UAJY. Setiap mahasiswa dapat mendapat informasi, mengumpulkan tugas, dan mengunduh sertifikat ketika kegiatan KKN telah selesai.</p>
+        @* <div class="separator"></div> *@
+
+        <a href="#" class="helpdesk-link">KSI Helpdesk disini</a>
+    </div>
+    <div class="login-form">
+        <h2 style="font-weight:600; color: black;">Log in</h2>
+        <form id="account" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+            <div class="form-group">
+                <div class="input-icon">
+                    <i class="fas fa-user"></i>
+                    <span class="separator"></span>
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="NPM" />
+                </div>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="input-icon">
+                    <i class="fas fa-lock"></i>
+                    <span class="separator"></span>
+                    <input asp-for="Input.Password" type="password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Password" />
+                </div>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <!-- Centering the button using Flexbox -->
+            <div class="d-flex justify-content-center">
+                <button id="login-submit" type="submit" class="btn btn-primary btn-sm" asp-area="" asp-controller="Home" asp-action="Dashboard">Login</button>
+            </div>
+        </form>
+
+            <h6 class="text-start">UNGGUL - INKLUSIF - HUMANIS - BERINTEGRITAS</h6>
+
+    </div>
+</div>
+<!-- Page specific script -->
+<script src="~/plugins/jquery/jquery.min.js"></script>
+<script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="~/plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/js/adminlte.min.js"></script>
+<script src="~/plugins/toastr/toastr.min.js"></script>
+<script>
+    $(function () {
+
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+        if (loginSuccessMessage) {
+            toastr.success("loginSuccessMessage");
+        }
+        $('.toastrDefaultSuccess').click(function () {
+            toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.');
+            toastr.success('@TempData["LoginSuccess"]');
+
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass  ": "toast-top-right",
+                "preventDuplicates": false,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }   
+        });
+
+        $('.toastrDefaultInfo').click(function () {
+            toastr.info('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultError').click(function () {
+            toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultWarning').click(function () {
+            toastr.warning('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+
+    });
+</script>
+@if (TempData["LoginSuccess"] != null)
+{
+    <script type="text/javascript">
+        $(function () {
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+            toastr.success('@TempData["LoginSuccess"]');
+        });
+    </script>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

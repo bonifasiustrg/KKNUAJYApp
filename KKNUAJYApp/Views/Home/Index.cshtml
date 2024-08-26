@@ -1,0 +1,242 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    //secondary layout
+    Layout = "~/Views/Shared/_LayoutSecondary.cshtml";
+}
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap" rel="stylesheet">
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+<!-- SweetAlert2 -->
+<link rel="stylesheet" href="~/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+<!-- Toastr -->
+<link rel="stylesheet" href="~/plugins/toastr/toastr.min.css">
+
+<style>
+    body {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .jumbotron {
+        height: 100vh;
+        position: relative;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000080;
+        overflow: hidden;
+        margin-top: -56px; /* Negative margin to counteract body padding */
+        padding-top: 56px; /* Add padding to push content below navbar */
+    }
+
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;    
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        /* opacity: 0.7; /* Transparansi video */ */
+    }
+
+
+
+    .content-section {
+        background-color: white;
+        /* padding: 20px; */
+        text-align: center;
+    }
+
+        .content-section img {
+            max-width: 80%;
+            height: auto;
+        }
+
+    .download-section {
+        background-color: white;
+        /* padding: 20px; */
+        text-align: center;
+    }
+
+    .download-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+        .download-title::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            margin-top: 5px;
+        }
+
+    .download-button {
+        margin-top: 20px;
+    }
+
+    span {
+        font-family: Outfit;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 28.8px;
+        text-align: center;
+    }
+    .faq-title {
+        padding-top:32px;
+        padding-bottom:64px;
+
+        font-family: Outfit;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 38.4px;
+        text-align: center;
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6); /* Warna gray dengan transparansi 0.7 */
+        z-index: -1; /* Menempatkan overlay di atas video, tapi di bawah konten lainnya */
+    }
+
+        .styled-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 38.4px;
+            text-align: center;
+        }
+
+    .big-title {
+        font-weight:normal;
+            color: white;
+        font-family: Outfit;
+        font-size: 60px;
+        line-height: 76.8px;
+        text-align: center;
+    }
+
+    .card-title {
+        display: flex;
+        align-items: center;
+    }
+    .card-title h3 {
+    flex-shrink: 0; /* Pastikan <h3> tidak menyusut */
+    margin-right: 10px; /* Opsional, untuk memberi jarak antara <h3> dan garis merah */
+    color: #0A5896;
+    font-size: 24px;
+    font-weight: bold;
+}
+    .yellowline,
+    .spacer {
+        width: 100%;
+        height: 2px;
+        display: inline;
+        border: 2px solid #F4AC1C 
+        /* background-color: red; */
+    }
+
+    .spacer {
+        height: 0px;
+    }
+    p {
+        text-align: justify;
+    }
+
+</style>
+
+
+<div class="jumbotron">
+    <video autoplay loop muted playsinline class="video-background">
+        <source src="/video/profile_vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+    <h1 class="big-title" style="text-align:center;">Welcome to Sistem Informasi KKN<br />Universitas Atma Jaya Yogyakarta</h1>
+</div>
+
+<section id="faq-section" class="content-section">
+    <div class="faq-title" style="color: #0A5896">
+        Frequently Asked Question (FAQ)
+        <br />
+        <span>Kegiatan KKN UAJY</span>
+    </div>
+    <div class="row justify-content-center mb-2">
+        <div class="col-md-6">
+            <div class="row no-gutters rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <div class="card-title">
+                        <h3 class="mb-0">Apa itu KKN?</h3>
+                        <span class="yellowline"></span>
+                    </div>
+
+                    <p class="card-text mb-auto">KKN (Kuliah Kerja Nyata) adalah program yang dimana mahasiswa turun langsung ke masyarakat untuk menerapkan ilmu yang telah dipelajari di kampus dalam kegiatan pengabdian dan pemberdayaan masyarakat.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row no-gutters rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <div class="card-title">
+                        <h3 class="mb-0">Apakah mahasiswa UAJY wajib ikut KKN?</h3>
+                        <span class="yellowline"></span>
+                    </div>
+                    <p class="mb-auto">Ya, karena KKN adalah bagian dari pelaksanaan Tridharma Perguruan Tinggi yang melibatkan pendidikan, penelitian, dan pengabdian kepada masyarakat.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row no-gutters rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <div class="card-title">
+                        <h3 class="mb-0">Berapa lama durasi KKN di UAJY?</h3>
+                        <span class="yellowline"></span>
+                    </div>
+                    <p class="card-text mb-auto">Mahasiswa UAJY akan menjalani KKN selama 30 hari, di mana mereka mengaplikasikan pengetahuan yang telah dipelajari untuk membantu dan memberdayakan masyarakat.​</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row no-gutters rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <div class="card-title">
+                        <h3 class="mb-0">Bagaimana penempatan lokasi KKN di UAJY?</h3>
+                        <span class="yellowline"></span>
+                    </div>
+                    <p class="mb-auto">Penempatan lokasi ini biasanya dipilih oleh Lembaga Penelitian dan Pengabdian Masyarakat (LPPM) UAJY, yang mempertimbangkan kebutuhan masyarakat serta potensi kontribusi yang bisa diberikan oleh mahasiswa berdasarkan bidang studi mereka.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row no-gutters rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <div class="card-title">
+                    <h3 class="mb-0">Adakah laporan yang harus disusun?</h3>
+                        <span class="yellowline"></span>
+                    </div>
+                    <p class="card-text mb-auto">Ya, mahasiswa yang mengikuti Kuliah Kerja Nyata (KKN) di UAJY diharuskan menyusun laporan. Laporan ini mencakup rincian kegiatan yang dilakukan, hasil yang dicapai, serta evaluasi dan refleksi dari program KKN selama 30 hari.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row no-gutters rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                   <div class="card-title">
+                    <h3 class="mb-0 car">Apa manfaat dari KKN bagi mahasiswa?</h3>
+                        <span class="yellowline"></span>
+                    </div>
+                    <p class="mb-auto">Kuliah Kerja Nyata (KKN) memberikan pengalaman hidup di lingkungan baru selama KKN memperkaya perspektif dan kesiapan mahasiswa untuk menghadapi tantangan di masa depan. Selain itu juga dapat mengembangkan keterampilan sosial dan interpersonal melalui interaksi dengan masyarakat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

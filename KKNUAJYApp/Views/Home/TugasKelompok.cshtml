@@ -1,0 +1,220 @@
+﻿@* @model KKNUAJYApp.Models.Joke
+ *@
+<header>
+    <style>
+        body {
+            background-color: #082f34;
+        }
+        
+
+        .nav-link.active {
+            /* border-color: blue blue white !important; */
+            border-radius: 8px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .nav-link {
+            color: #082f34 !important;
+            font-weight: 700;
+            width: 200px;
+        }
+
+            .nav-link:hover {
+                border-color: white !important;
+                background-color: white;
+                border-radius: 8px;
+            }
+
+
+        p, li {
+            font-size: 18px;
+        }
+
+        th {
+            color: blue;
+        }
+    </style>
+</header>
+
+<section class="content-header">
+        <div class="row mb-2 px-5">
+            <div class="col-sm-6">
+                <h1 style="font-weight:bold; color: #f4ac1c">TUGAS KELOMPOK</h1>
+                <h4 style="font-weight:400">HOME/UPLOAD TUGAS/KELOMPOK</h4>
+            </div>
+            <div class="col-sm-6">
+                <@* ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Projects</li>
+                </ol> *@
+                <button type="button" class="btn btn-primary float-sm-right" data-toggle="modal" data-target="#modal-lg">Upload File</button>
+                <input type="file" id="fileInput" style="display: none;" />
+            </div>
+        <div>
+        </div>
+        </div>
+        <div class="custom-div">
+
+            <h6 style="font-weight: bold">Guidelines</h6>
+            <ul>
+                <li>
+                    Dokumen togas kelompok dikumpulkan Oleh Perwakilan Kelompok saja,
+                </li>
+            </ul>
+        </div>
+</section>
+
+<section class="py-8">
+
+    <div class="py-5 px-5">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="rounded" style="background-color: white;">
+                    <ul class="nav nav-tabs justify-content-center py-2" style="background-color: #e5e5e5;   border-radius: 8px;  margin-left: 190px; margin-right: 190px">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active text-center" data-bs-toggle="tab" href="#laporan">Laporan</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-center" data-bs-toggle="tab" href="#ebook1">E-Book 1</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-center" data-bs-toggle="tab" href="#ebook2">E-Book 2</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-center" data-bs-toggle="tab" href="#video1">Video 1</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-center" data-bs-toggle="tab" href="#video2">Video 2</a>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="tab-content p-4">
+                                <div id="laporan" class="tab-pane fade show active">
+                                    <p class="text-center">No Data Available</p>
+                                </div>
+                                <div id="ebook1" class="tab-pane fade">
+                                    <p class="text-center">No Data Available</p>
+                                    <embed id="pdfEmbed" class="pdf-embed" src="" type="application/pdf">
+                                </div>
+                                <div id="ebook2" class="tab-pane fade">
+                                    <p class="text-center">No Data Available</p>
+                                </div>
+                                <div id="video1" class="tab-pane fade">
+                                    <p class="text-center">No Data Available</p>
+                                </div>
+                                <div id="video2" class="tab-pane fade">
+                                    <p class="text-center">No Data Available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Tab Panel Nav -->
+</section>
+
+
+
+
+<!-- /.content -->
+<div class="modal fade" id="modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header py-2 px-4">
+            <h2 style="font-weight:600; color: #f4ac1c">UPLOAD TUGAS KELOMPOK</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+            <div class="card card-default">
+                <!-- /.card-header -->
+                <div class="card-body p-4">
+                    
+                    <!-- ROW1 -->
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">E-BOOK 1 (PDF)</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-12 col-sm-6">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">VIDEO 1</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- ROW2 -->
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">E-BOOK 2 (PDF)</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-12 col-sm-6">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">VIDEO 2</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- ROW3 -->
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">LAPORAN (POF)</label>
+                                <input class="form-control" type="file" id="formFile" placeholder="Drop files here to upload">
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+
+                    <!-- /.row -->
+                    <div class="modal-footer justify-content-end py-2">
+                        <button type="button" asp-area="" asp-controller="Home" asp-action="TugasKelompokContent" class="btn btn-primary btn-sm" id="">
+                            <a style="color:white" asp-area="" asp-controller="Home" asp-action="TugasKelompokContent"> Submit </a>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<script>
+    document.getElementById('confirmButton').addEventListener('click', function () {
+        var fileInput = document.querySelector('#modal-lg #formFile');
+        var file = fileInput.files[0];
+        if (file && file.type === 'application/pdf') {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var pdfEmbed = document.getElementById('pdfEmbed');
+                pdfEmbed.src = e.target.result;
+                pdfEmbed.style.display = 'block';
+                var tabEbook1 = new bootstrap.Tab(document.querySelector('a[href="#ebook1"]'));
+                tabEbook1.show();
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+
