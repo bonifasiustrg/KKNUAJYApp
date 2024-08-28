@@ -29,7 +29,7 @@
         }
 
         th {
-            color: blue;
+            color: black;
         }
 
         .box__dragndrop,
@@ -38,14 +38,50 @@
         .box__error {
             display: none;
         }
+
+        .dragdrop {
+            padding:30px;
+            background-color: #f8f9fa;
+            border-radius: 20px;
+            box-shadow: rgba(149, 157, 165, 0,2) 0px 8px 24px;
+        }
+        .drag-area {
+            height: 200px;
+            border: 3px dashed #e0eafc;
+            display: flex;
+            align-items: center;    
+            justify-content: center;
+            flex-direction: column;
+            margin: 10px auto;
+        }
+        .drag-area .icon {
+            font-size: 50px;
+            color: dimgray;
+        }
+
+        .drag-area .header {
+            font-size: 16px;
+            font-weight: 500;
+            color: #34495e;
+
+        }
+        .drag-area .support {
+            font-size: 12px;
+            color: gray;
+            margin: 10px 0 15px 0;
+
+        }
+        .drag-area.active {
+            border: 2px solid #1683ff;
+        }
     </style>
 </header>
 
 <section class="content-header">
         <div class="row mb-2 px-5">
             <div class="col-sm-6">
-                <h1 style="font-weight:bold; color: #f4ac1c">Permohonan TTD Blanko</h1>
-                <h4 style="font-weight:400">HOME/TTD BLANKO BLANKO</h4>
+            <h1 style="font-weight:bold; color: #f4ac1c">DATA BLANKO KELOMPOK XX</h1>
+            <h4 style="font-weight:400">KELOMPOK / TANDA TANGAN BLANKO</h4>
             </div>
             <div class="col-sm-6">
                 @* <ol class="breadcrumb float-sm-right">
@@ -63,15 +99,14 @@
         <div class="mx-2 mb-5 custom-div">
 
             <h6 style="font-weight: bold">Guidelines</h6>
-            <ol>
+            <ul>
                 <li>
-                    Kendaraan yang dapat didaftarkan selama Penerjunan maksimal berjumlah 3.
+                    Silahkan mengunduh dokumen blanko untuk diberikan tanda tangan digital.
                 </li>
                 <li>
-                    Kendaraan yang dapat didaftarkan selama Live-in maksimal berjumlah 5.
-
+                    Dokumen yang telah diberi tanda tangan mohon diunggah kembali.
                 </li>
-            </ol>
+            </ul>
         </div>
         <div class="row">
             <div class="col-12 ">
@@ -79,13 +114,13 @@
 
                     <div class="row">
                         <div class="col-12">
+                                
 
-
-                            <div class="col-12 table-responsive">
-                                <table class="table table-stripped">
+                            <div class="col-12">
+                                <table id="example2" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
+                                            <th width="10px">No</th>
                                             <th>Blanko</th>
                                             <th>Upload</th>
                                             <th>Status</th>
@@ -99,16 +134,15 @@
                                             <tr>
                                                 <td>@i. </td>
                                                 <td>Blanko 01</td>
-                                                <td>
+                                                <td >
                                                     <button type="button" class="btn btn-primary btn-sm" style="background-color: #0A5896;" data-toggle="modal" data-target="#modal-lg">
                                                         <a style="color:white"> Upload File </a>
                                                     </button>
                                                     <input type="file" id="fileInput" style="display: none;" />
                                                 </td>
-                                                <td>-</td>
+                                                <td width="200px" id="status-@i"><span class="alert alert-success py-2 mx-5" style="background-color: #ffc107; border:none; border-radius:50px;">Menunggu</span></td> <!-- Tambahkan ID unik pada setiap kolom status -->
                                                 <td>
                                                     <button type="button" class="btn btn-primary btn-sm" style="background-color: #0A5896;" data-toggle="modal" data-target="#modal-success">Download</button>
-
                                                 </td>
 
 
@@ -163,38 +197,39 @@
                 <!-- /.card-header -->
                 <div class="card-body p-4">
 
-                    <!-- ROW1 -->
-                    @* <div class="row">
-                        <div class="col-12 col-sm-6">
-                            <form class="box" method="post" action="" enctype="multipart/form-data">
-                                <div class="box__input">
-                                    <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
-                                    <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
-                                    <button class="box__button" type="submit">Upload</button>
-                                </div>
-                                <div class="box__uploading">Uploading…</div>
-                                <div class="box__success">Done!</div>
-                                <div class="box__error">Error! <span></span>.</div>
-                            </form>
-                        </div>
-                        <!-- /.col -->
-                    </div> *@
                     <!-- /.row -->
                     <!-- ROW3 -->
                     <div class="row">
-                        <div class="col-12 col-sm-6">
+                        <div class="col-12 col-sm-12">
+                            @* <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile02" name="file2">
+                                    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Upload your file here</label>
+                                </div>
+                            </div> *@
+
+                            <div class="mb-3 dragdrop">
+                                <div class="drag-area">
+                                    <div class="icon">
+                                        <i class="fas fa-upload"></i>
+                                    </div>
+
+                                    <span class="header">Drag & Drop files here to upload.</span>
+                                    <span class="support">Only PDF files are allowed.</span>
+
+                                </div>
+                            </div>
                             <div class="mb-3">
-                                <label for="formFile" class="form-label">LAPORAN (POF)</label>
                                 <input class="form-control" type="file" id="formFile" placeholder="Drop files here to upload">
                             </div>
                         </div>
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->
-                    <!-- /.row -->
+                    <!-- /.row -->  
                     <div class="modal-footer justify-content-end py-2">
-                        <button type="button" asp-area="" asp-controller="Home" asp-action="TugasKelompokContent" class="btn btn-primary btn-sm" id="">
-                            <a style="color:white" asp-area="" asp-controller="Home" asp-action="TugasKelompokContent"> Submit </a>
+                        <button class="btn btn-primary btn-sm custom-btn px-4" data-dismiss="modal" id="submitUploadButton">
+                            <a style="color:white"> Submit </a>
 
                         </button>
                     </div>
@@ -207,3 +242,47 @@
     <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+
+<script>
+    var clickedRowIndex; // Variabel untuk menyimpan indeks baris yang diklik
+
+    // Event listener untuk semua tombol Upload
+    document.querySelectorAll('button[data-target="#modal-lg"]').forEach((button, index) => {
+        button.addEventListener('click', function () {
+            clickedRowIndex = index + 1; // Simpan indeks baris yang diklik (dimulai dari 1)
+        });
+    });
+
+    // Event listener untuk tombol Submit di modal
+    document.getElementById('submitUploadButton').addEventListener('click', function () {
+        if (clickedRowIndex !== undefined) {
+            // Temukan elemen status berdasarkan indeks baris yang disimpan
+            var statusElement = document.getElementById('status-' + clickedRowIndex);
+            statusElement.innerHTML = '<span class="alert alert-success py-2 mx-5" style="border:none; background-color: #198754; border-radius:50px;">Uploaded</span>';
+        }
+    });
+</script>
+
+<script>
+    const dragArea = document.querySelector('.drag-area');
+    const dragText = document.querySelector('.header');
+
+    //saat file di dalam drag area
+    dragArea.addEventListener('dragover', (event) => { 
+        event.preventDefault();
+        dragText.textContet = 'Release to Upload';
+        dragArea.classList.add('active');
+    })
+
+    //saat file di meninggalkan drag area
+    dragArea.addEventListener('dragleave', () => {
+        dragText.textContet = 'Drag & Drop';
+        dragArea.classList.remove('active')
+    })
+
+    //saat file di dalam drag area
+    dragArea.addEventListener('drop', (event) => {
+        event.preventDefault();
+    })
+
+</script>

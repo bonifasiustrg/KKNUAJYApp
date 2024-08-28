@@ -1,0 +1,171 @@
+﻿@* @model KKNUAJYApp.Models.Joke
+ *@
+<header>
+    <style>
+        body {
+            background-color: #082f34;
+        }
+
+        .nav-link.active {
+            /* border-color: blue blue white !important; */
+            border-radius: 8px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .nav-link {
+            color: #082f34 !important;
+            font-weight: 700;
+            width: 18   0px;
+        }
+
+            .nav-link:hover {
+                border-color: white !important;
+                background-color: white;
+                border-radius: 8px;
+            }
+
+
+        p, li {
+            font-size: 18px;
+        }
+
+        .td-modal, .th-modal {
+            text-align: center;
+            color: #0a5896;
+        }
+    </style>
+</header>
+
+<section class="content-header">
+    <div class="row mb-2 px-5">
+        <div class="col-sm-6">
+            <h1 style="font-weight:600; color: #0a5896">Tugas Kelompok - Kelompok 1</h1>
+            <h4 style="font-weight:300">KELOMPOK / TUGAS KELOMPOK</h4>
+        </div>
+
+        <div class="col-sm-6">
+            <button class="btn btn-primary float-sm-right px-5" style="background-color: #0A5896;" data-toggle="modal" data-target="#modal-lg">
+                <a style="color:white"> Input Nilai </a>
+            </button>
+            <input type="file" id="fileInput" style="display: none;" />
+        </div>
+    </div>
+</section>
+
+<section class="py-8">
+
+    <div class="py-5 px-5">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="rounded" style="background-color: white;">
+                    <ul class="nav nav-tabs justify-content-center py-2" style="background-color: #e5e5e5;   border-radius: 8px;  margin-left: 90px; margin-right: 90px">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active text-center" data-bs-toggle="tab" href="#laporan">Laporan</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-center" data-bs-toggle="tab" href="#ebook1">E-Book 1</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-center" data-bs-toggle="tab" href="#ebook2">E-Book 2</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-center" data-bs-toggle="tab" href="#video1">Video 1</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-center" data-bs-toggle="tab" href="#video2">Video 2</a>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="tab-content p-4 ">
+                                <div id="laporan" class="tab-pane fade show active">
+                                    <div style="display: flex; justify-content: center; background-color: white; padding: 20px;">
+                                        <embed src="~/pdf/jurnal.pdf" style="width: 70vw; height: 1200px; border: none;" type="application/pdf">
+                                    </div>
+                                </div>
+                                <div id="ebook1" class="tab-pane fade ">
+                                    <p class="text-center">No Data Available</p>
+                                </div>
+                                <div id="ebook2" class="tab-pane fade ">
+                                    <p class="text-center">No Data Available</p>
+                                </div>
+                                <div id="video1" class="tab-pane fade ">
+                                    <div style="display: flex; justify-content: center; background-color: white; padding: 20px;">
+                                        <iframe width="1280px" height="720px" src="https://www.youtube.com/embed/jeDKsg8r3ew?si=wCaJsEzXqS1_Z9Jt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div id="video2" class="tab-pane fade ">
+                                    <div style="display: flex; justify-content: center; background-color: white; padding: 20px;">
+                                        <p class="text-center">No Data Available</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Tab Panel Nav -->
+</section>
+
+
+<!-- /modal for upload -->
+<div class="modal fade" id="modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header py-2 px-4">
+                <h2 style="font-weight:600; color: #0a5896">Form Input Nilai</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+
+
+            <div class="card card-default">
+                <!-- /.card-header -->
+                <div class="card-body p-4">
+
+                    <div class="row">
+                        <div class="col-12 col-sm-12">
+                            <div class="card-body p-0">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="th-modal">Nama</th>
+                                            <th class="th-modal">NPM</th>
+                                            <th class="th-modal">Nilai Tugas Individu</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>John Michael Smith</td>
+                                            <td>200756789</td>
+                                            <td>
+                                                <div class="">
+                                                    <input style="border-color: black; height: 75%;" type="number" class="form-control" placeholder="Berikan nilai 1-100!" min="1" max="100" step="1">
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- /.row -->
+                    <div class="modal-footer justify-content-end py-2">
+                        <button class="btn btn-primary float-sm-right px-5 toastrDefaultSuccess" data-dismiss="modal" style="background-color: #0A5896;" data-dismiss="modal">Upload</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

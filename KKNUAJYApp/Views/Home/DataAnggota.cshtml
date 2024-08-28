@@ -49,7 +49,7 @@
             font-size: 18px;
         }
         th {
-            color:blue;
+            color:black;
         }
 
 
@@ -91,48 +91,13 @@
 <section class="content-header">
     <div class="row mb-2 px-5">
         <div class="col-sm-6">
-            <h1 style="font-weight:bold; color: #f4ac1c">DAFTAR KENDARAAN SEMASA KKN</h1>
-            <h4 style="font-weight:400">HOME/ DATA KENDARAAN KELOMPOK</h4>
-        </div>
-        <div class="col-sm-6">
-            @* <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Projects</li>
-            </ol> *@
-            @* <button type="button" class="float-sm-right btn btn-primary" data-toggle="modal" data-target="#modal-lg">Upload File</button> *@
-            <button class="btn btn-primary float-sm-right px-5" style="background-color: #0A5896;" data-toggle="modal" data-target="#modal-lg">
-                <a style="color:white" @* asp-area="" asp-controller="Home" asp-action="FormPendaftaran" *@> Upload </a>
-            </button>
-            <input type="file" id="fileInput" style="display: none;" />
+            <h1 style="font-weight:bold; color: #f4ac1c">DATA ANGGOTA KELOMPOK</h1>
+            <h4 style="font-weight:400">KELOMPOK / ANGGOTA</h4>
         </div>
     </div>
 </section>
-<section class="py-8">
-    <div class="custom-div">
-        
-        <h6 style="font-weight: bold">Guidelines</h6>
-        <ol>
-            <li>
-                Kendaraan yang dapat didaftarkan selama Penerjunan maksimal berjumlah 3.
-            </li>
-            <li>
-                Kendaraan yang dapat didaftarkan selama Live-in maksimal berjumlah 5.
-
-            </li>
-        </ol>
-    </div>
+<section class="py-8 mx-4">
     <div class="py-5 px-5">
-        <div class="filter-container px-3">
-            <div class="filter-item">
-                <select>
-                    <option>Digunakan ketika</option>
-                </select>
-            </div>
-            <div class="icon-container">
-                <span class="icon filter">&#9660;</span>
-                <span class="icon clear">&#10005;</span>
-            </div>
-        </div>
         <div class="row">
             <div class="col-12 ">
                 <div class="bg-white rounded p-2">
@@ -143,40 +108,32 @@
                             <!-- Table row -->
                             <div class="row">
                             <div class="col-12 table-responsive">
-                                <table id="example1" class="table table-striped">
+                                <table id="example2" class="table table-striped">
                                     <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Merk Kendaraan</th>
-                                        <th>Plat Nomor</th>
-                                        <th>Digunakan ketika</th>
+                                        <th>Nama</th>
+                                        <th>NPM</th>
+                                        <th>Program Studi</th>
+                                        <th>Dokumen</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Call of Duty</td>
-                                        <td>455-981-221</td>
-                                        <td>El snort testosterone trophy driving gloves handsome</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Need for Speed IV</td>
-                                        <td>247-925-726</td>
-                                        <td>Wes Anderson umami biodiesel</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Monsters DVD</td>
-                                        <td>735-845-642</td>
-                                        <td>Terry Richardson helvetica tousled street art master</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Grown Ups Blue Ray</td>
-                                        <td>422-568-642</td>
-                                        <td>Tousled lomo letterpress</td>
-                                    </tr>
+                                        @for (int i = 1; i <= 30; i++)
+                                        {
+
+                                            <tr>
+                                                <td>John Michael Smith</td>
+                                                <td>200756789</td>
+                                                <td>Arsitektur</td>
+                                                <td>
+                                                    <a asp-area="" asp-controller="Home" asp-action="PenilaianIndividu">
+                                                        Tugas Individu
+                                                </a>
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    
                                     </tbody>
                                 </table>
                             </div>

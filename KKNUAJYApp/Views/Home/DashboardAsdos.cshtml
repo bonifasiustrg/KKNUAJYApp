@@ -44,27 +44,34 @@
         font-size: 18px;
     }
 
+
+
 </style>
+<div class="jumbotron">
+    <h3 class="h1 mb-2 text-white text-center" style="font-weight: 500;">
+        <span style="color: #F4AC1C;">PAPAN PENGUMUMAN </span>
+        <span style="color: white;">KKN UAJY 2023/2024</span>
+    </h3>
+</div>
+<section>
 
-<section class="py-8 bg-white">
-    <div class="container-fluid px-0">
-        <div class="px-0 ps-md-12 bg-primary overflow-hidden rounded">
-            <div class="row no-gutters">
-                <div class="col-12 col-md-12 d-flex align-items-center justify-content-center" style="padding-top: 40px; padding-bottom: 40px; background-color: #335da4">
-                    <h3 class="h1 mb-2 text-white text-center" style="font-weight: 500;">
-                        <span style="color: #F4AC1C;">PAPAN PENGUMUMAN </span>
-                        <span style="color: white;">KKN UAJY 2023/2024</span>
-                    </h3>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="py-5 px-5 bg-white">
+    <div class="pb-5 px-5 bg-white">
         <div class="row">
-            <div class="col-12  px-5 ">
+            <div class="col-12   px-5 ">
                 <div class="row flex-column">
+                    <div class="card-title my-4">
+                        <h3 class="mb-0">DATA PENDAFTAR KKN PERIODE 23 /24</h3>
+                        <span class="yellowline"></span>
+                    </div>
 
+                    <div class="col d-flex align-items-center">
+                        <p class="mb-0">
+                            Silahkan unduh daftar kelompok pada tombol berikut:
+                        </p>
+                        <button class="btn btn-primary btn-sm ml-2" data-toggle="modal" data-target="#modal-success" style="background-color: #335da4; border-color: #335da4;">
+                            Download
+                        </button>
+                    </div>
                     <div class="card-title my-4 ">
                         <h3 class="mb-0">JADWAL PEMBEKALAN KKN PERIODE 23/24</h3>
                         <span class="yellowline"></span>
@@ -79,10 +86,25 @@
         </div>
     </div>
 
-    
+
 </section>
 
-
+<div class="modal fade" id="modal-success">
+    <div class="modal-dialog">
+        <div class="modal-content bg-white">
+            <div class="modal-header">
+                <button type="button" class="close top-0 end-0" style="border: none; background-color:transparent" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <i class="fas fa-check-circle text-success fa-2x mb-3"></i>
+                <h6 class="text-success mb-3 text-success" style="font-weight:bold">SUCCESS</h6>
+                <p>Your file is being downloaded.</p>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {

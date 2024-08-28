@@ -35,6 +35,10 @@ namespace KKNUAJYApp.Controllers
         {
             return View();
         }
+        public IActionResult BlankoKelompok()
+        {
+            return View();
+        }
         public IActionResult PenilaianKel()
         {
             return View();
@@ -55,7 +59,11 @@ namespace KKNUAJYApp.Controllers
         {
             return View();
         }
-        public IActionResult DataKelompok()
+        public IActionResult DataKelompokAsdos()
+        {
+            return View();
+        }
+        public IActionResult DataKelompokDosen()
         {
             return View();
         }
@@ -73,6 +81,32 @@ namespace KKNUAJYApp.Controllers
             return View();
         }
         public IActionResult DashboardAsdos()
+        {
+            return View();
+        }
+
+
+        public IActionResult DataAnggota()
+        {
+            return View();
+        }
+        public IActionResult DataKendaraan()
+        {
+            return View();
+        }
+        public IActionResult FormNA()
+        {
+            return View();
+        }
+        public IActionResult PenilaianIndividu()
+        {
+            return View();
+        }
+        public IActionResult PenilaianKelompok()
+        {
+            return View();
+        }
+        public IActionResult Presensi()
         {
             return View();
         }
