@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var userRole = "Mahasiswa"; // sesuaikan dengan user yang ingin login: "Mahasiswa", "Asdos", atau "Dosen"
+    var isRegistered = true;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -21,13 +25,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <style>
-        /* .nav {
-            border-color: blue !important;
-        }
-
-        .nav-link.active {
-            border-color: blue blue white !important;
-        } */
 
         .nav-link {
             color: #082f34 !important;
@@ -105,8 +102,8 @@
         }
 
         .custom-div {
-            padding: 16px;
-            width: 50%;
+            padding: 8px 16px 8px 16px;
+            width: 75%;
             margin-left: 48px;
             margin-right: 48px;
             color: #0C6BB7;
@@ -204,19 +201,40 @@
             font-weight:300;
             font-size:22px; 
         }
+
+        .yellowline,
+        .spacer {
+            width: 100%;
+            height: 2px;
+            display: inline;
+            border: 2px solid #F4AC1C
+            /* background-color: red; */
+        }
+        a p {
+            font-size: 17px;
+        }
+        a {
+            display: flex;
+            align-items: center;
+        }
+        /* Change background color and text color for success toastr */
+        #toast-container > .toast-success {
+            border-radius: 8px !important; /* Membuat sudut toastr lebih rounded */
+
+            background-color: rgb(36, 44, 50, 0.9) !important; /* Change background to black */
+            color: white !important; /* Change text color to white */
+        }
+
+            /* Change progress bar color to green */
+            #toast-container > .toast-success .toast-progress {
+                background-color: mediumspringgreen !important;
+                z-index: 9999 !important; /* Make sure it's on top */
+                height: 5px; /* Adjust progress bar height */
+            }
     </style>
 
 
 </head>
-<!--
-`body` tag options:
-
-  Apply one or more of the following classes to to the body tag
-  to get the desired effect
-
-  * sidebar-collapse
-  * sidebar-mini
--->
 
 
 <body class="hold-transition sidebar-mini">
@@ -228,17 +246,11 @@
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
-@*                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
-                </li> *@
-            </ul>
+            </ul>       
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto px-4" style="margin-top:10px">
-                <h6 style="font-weight: 600; font-size: 20px">Selamat datang, anda sudah login sebagai Pengguna</h6>
+                <h6 style="font-weight: 600; font-size: 20px">Selamat datang, anda sudah login sebagai @userRole</h6>
 
             </ul>
         </nav>
@@ -267,99 +279,181 @@
                 </div>
             </div>
         </a>
-
-        @* <!-- SidebarSearch Form -->
-        <div class="form-inline">ch
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
-                </div>
-            </div>
-        </div> *@
                 
         <!-- Sidebar Menu -->
         <nav class="mt-2" style="flex: 1;">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Dashboard">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DashboardAsdos">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>Dashboard Asdos</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Pendaftaran">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>Pendaftaran</p>
-                    </a>
-                </li>
+                @*
+                // This way using database and role authorization
+                @if (User.IsInRole("Mahasiswa"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Dashboard">
+                            <i class="nav-icon fas fa-file"></i>
+                            <p>Dashboard Mahasiswa</p>
+                        </a>
+                    </li>
+                }
+                else if (User.IsInRole("Asdos"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DashboardAsdos">
+                            <i class="nav-icon fas fa-file"></i>
+                            <p>Dashboard Asdos</p>
+                        </a>
+                    </li>
+                } *@
 
-                <li class="nav-item menu-close">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-file" style="color: black"></i>
-                        <p>
-                            Tugas
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
+            @*
+                // This way using database and role authorization
+                @if (signInManager.IsSignedIn(User) && User.IsInRole("Mahasiswa"))
+                {
+                    // memu yg ditampilkan 
+                } else if (signInManager.IsSignedIn(User) && User.IsInRole("Dosen")) {
+                    //menu yg ditampilkan
+                } else if (signInManager.IsSignedIn(User) && User.IsInRole("Asdos")) {
+                    //menu yg ditampilkan
+                }
+                *@
+
+
+                @if (isRegistered)
+                {
+                    @if (userRole == "Mahasiswa" || userRole == "Dosen")
+                    {
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="TugasIndividu">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Individu</p>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Dashboard">
+                                        <img class="nav-icon" src="~/img/dashboard_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                        <p>Dashboard</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item menu-close">
+                            <a href="#" class="nav-link">
+                                <img class="nav-icon" src="~/img/tugas_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                <p>
+                                    Tugas
+                                </p>
+                                <i class="right fas fa-angle-left"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="TugasIndividu">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Individu</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="TugasKelompok">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Kelompok</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Blanko">
+                                        <img class="nav-icon" src="~/img/file_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                        <p style="color: black;">Blanko</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="KendaraanKel">
+                                        <img class="nav-icon" src="~/img/kendaraan_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                        <p style="color: black;">Kendaraan Kelompok</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="PenilaianKel">
+                                        <img class="nav-icon" src="~/img/penilaian_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                        <p style="color: black;">Penilaian Kelompok</p>
+                            </a>
+                        </li>
+
+
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Pendaftaran">
+                                <img class="nav-icon" src="~/img/pendaftaran_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+
+                                <p>Pendaftaran</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DashboardAsdos">
+                                <img class="nav-icon" src="~/img/dashboard_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                <p>Dashboard</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="TugasKelompok">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Kelompok</p>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DataKelompokAsdos">
+                                <img class="nav-icon" src="~/img/data_kel_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                <p style="color: black;">Data Kelompok | Asdos</p>
                             </a>
                         </li>
-                    </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DataKelompokDosen">
+                                <img class="nav-icon" src="~/img/data_kel_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                <p style="color: black;">Data Kelompok | Dosen</p>
+                            </a>
+                        </li>
+                    }
+                    else if (userRole == "Dosen")
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Dashboard">
+                                        <img class="nav-icon" src="~/img/dashboard_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                        <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DataKelompokAsdos">
+                                <img class="nav-icon" src="~/img/data_kel_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                <p style="color: black;">Data Kelompok | Asdos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DataKelompokDosen">
+                                        <img class="nav-icon" src="~/img/data_kel_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                        <p style="color: black;">Data Kelompok | Dosen</p>
+                            </a>
+                        </li>
 
-                </li>
+                    }
+                    else if (userRole == "Asdos")
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DashboardAsdos">
+                                        <img class="nav-icon" src="~/img/dashboard_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                        <p>Dashboard</p>
+                            </a>
+                        </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Blanko">
-                        <i class="nav-icon fas fa-file" style="color: black"></i>
-                        <p style="color: black;">Blanko</p>
-                    </a>
-                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DataKelompokAsdos">
+                                        <img class="nav-icon" src="~/img/data_kel_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                        <p style="color: black;">Data Kelompok | Asdos</p>
+                            </a>
+                        </li>
+                    }
+                } else {
+                    <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Pendaftaran">
+                                    <img class="nav-icon" src="~/img/pendaftaran_ic.png" alt="Icon" style="width: 24px; height: 24px;">
 
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="KendaraanKel">
-                        <i class="nav-icon fas fa-file" style="color: black"></i>
-                        <p style="color: black;">Kendaraan Kelompok</p>
-                    </a>
-                </li>
+                                <p>Pendaftaran</p>
+                            </a>
+                    </li>
+                }
+                
 
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="PenilaianKel">
-                        <i class="nav-icon fas fa-file" style="color: black"></i>
-                        <p style="color: black;">Penilaian Kelompok</p>
-                    </a>
-                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DataKelompokDosen">
-                        <i class="nav-icon fas fa-file" style="color: black"></i>
-                        <p style="color: black;">Data Kelompok | Dosen</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DataKelompokAsdos">
-                        <i class="nav-icon fas fa-file" style="color: black"></i>
-                        <p style="color: black;">Data Kelompok | Asdos</p>
-                    </a>
-                </li>
             </ul>
         </nav>
         <div class="logout-item pb-3 my-3 pl-3 d-flex">
@@ -373,19 +467,6 @@
             </div>
         </div>
 
-
-        @* <div class="logout-item" style="margin-top: auto;">
-                <button asp-area="" asp-controller="Home" asp-action="Index">
-                    <div class="row">
-                        <a class="nav-link" data-toggle="modal" data-target="#modal-default" style="color: red;">
-
-                    <i class="nav-icon fas fa-sign-out-alt mr-2" style="color: red;"></i>
-                    <p style="color: red;">Logout</p>
-                    </div>
-                </button>
-
-            </a>
-        </div> *@
     </div>
 
 </aside>

@@ -16,7 +16,7 @@
         .nav-link {
             color: #082f34 !important;
             font-weight: 700;
-            width: 200px;
+            width: 160px;
         }
 
             .nav-link:hover {
@@ -27,7 +27,7 @@
 
 
         p, li {
-            font-size: 18px;
+            font-size: 16px;
         }
 
         th {
@@ -43,20 +43,19 @@
                 <h4 style="font-weight:400">HOME/UPLOAD TUGAS/KELOMPOK</h4>
             </div>
             <div class="col-sm-6">
-                <@* ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Projects</li>
-                </ol> *@
-                <button type="button" class="btn btn-primary float-sm-right" onclick="document.getElementById('fileInput').click();">Upload File</button>
-                <input type="file" id="fileInput" style="display: none;" />
+            <button style="margin-right: 18px; margin-bottom: 18px; background-color: #0A5896;" type="button" class="px-5 float-sm-right btn btn-primary" data-toggle="modal" data-target="#modal-lg">
+                    Upload
+                </button>
             </div>
         <div>
-            <button style="margin-right: 18px; margin-bottom: 18px;" type="button" class="float-sm-right btn btn-primary" data-toggle="modal" data-target="#modal-lg">
-                Upload
-            </button>
         </div>
     </div>
-    <div class="custom-div">
+
+</section>
+
+<section class="content">
+
+    <div class="custom-div mb-4">
 
         <h6 style="font-weight: bold">Guidelines</h6>
         <ul>
@@ -65,55 +64,49 @@
             </li>
         </ul>
     </div>
-</section>
-
-<section class="py-8">
-
-    <div class="py-5 px-5">
-        <div class="row">
-            <div class="col-12 ">
-                <div class="rounded" style="background-color: white;">
-                    <ul class="nav nav-tabs justify-content-center py-2" style="background-color: #e5e5e5;   border-radius: 8px;  margin-left: 190px; margin-right: 190px">
-                        <li class="nav-item mx-2">
-                            <a class="nav-link active text-center" data-bs-toggle="tab" href="#laporan">Laporan</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link text-center" data-bs-toggle="tab" href="#ebook1">E-Book 1</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link text-center" data-bs-toggle="tab" href="#ebook2">E-Book 2</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link text-center" data-bs-toggle="tab" href="#video1">Video 1</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link text-center" data-bs-toggle="tab" href="#video2">Video 2</a>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="tab-content p-4">
-                                <div id="laporan" class="tab-pane fade show active">
-                                    <!-- Container for centering the embedded PDF -->
-                                    <div style="display: flex; justify-content: center; background-color: white; padding: 20px;">
-                                        <embed src="~/pdf/jurnal.pdf" style="width: 70vw; height: 375px; border: none;" type="application/pdf">
-                                    </div>
+    <div class="row">
+        <div class="col-12 ">
+            <div class="rounded" style="background-color: white;">
+                <ul class="nav nav-tabs justify-content-center py-2 px-4" style="background-color: #e5e5e5;   border-radius: 8px; margin-left: 250px; margin-right: 250px">
+                    <li class="nav-item">
+                        <a class="nav-link active text-center" data-bs-toggle="tab" href="#laporan">Laporan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center" data-bs-toggle="tab" href="#ebook1">E-Book 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center" data-bs-toggle="tab" href="#ebook2">E-Book 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center" data-bs-toggle="tab" href="#video1">Video 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center" data-bs-toggle="tab" href="#video2">Video 2</a>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-12 p-4 py-5 px-5" style="background-color: #f3f4fa; height: 100%;">
+                        <div class="tab-content ">
+                            <div id="laporan" class="tab-pane fade show active">
+                                <!-- Container for centering the embedded PDF -->
+                                <div style="display: flex; justify-content: center; padding: 20px;">
+                                    <embed src="~/pdf/jurnal.pdf" style="width: 70vw; height: 375px; border: none;" type="application/pdf">
                                 </div>
-                                <div id="ebook1" class="tab-pane fade">
-                                    <p class="text-center">No Data Available</p>
-                                    <embed id="pdfEmbed" class="pdf-embed" src="" type="application/pdf">
+                            </div>
+                            <div id="ebook1" class="tab-pane fade">
+                                <p class="text-center">No Data Available</p>
+                                <embed id="pdfEmbed" class="pdf-embed" src="" type="application/pdf">
+                            </div>
+                            <div id="ebook2" class="tab-pane fade">
+                                <p class="text-center">No Data Available</p>
+                            </div>
+                            <div id="video1" class="tab-pane fade ">
+                                <div style="display: flex; justify-content: center; padding: 20px;">
+                                    <iframe width="1280px" height="720px" src="https://www.youtube.com/embed/jeDKsg8r3ew?si=wCaJsEzXqS1_Z9Jt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
-                                <div id="ebook2" class="tab-pane fade">
-                                    <p class="text-center">No Data Available</p>
-                                </div>
-                                <div id="video1" class="tab-pane fade">
-                                    <div style="display: flex; justify-content: center; background-color: white; padding: 20px;">
-                                        <iframe width="1280px" height="720px" src="https://www.youtube.com/embed/jeDKsg8r3ew?si=wCaJsEzXqS1_Z9Jt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                <div id="video2" class="tab-pane fade">
-                                    <p class="text-center">No Data Available</p>
-                                </div>
+                            </div>
+                            <div id="video2" class="tab-pane fade">
+                                <p class="text-center">No Data Available</p>
                             </div>
                         </div>
                     </div>
@@ -193,7 +186,7 @@
 
                     <!-- /.row -->
                     <div class="modal-footer justify-content-end py-2">
-                        <button type="button" class="btn btn-primary btn-sm toastrDefaultSuccess" id="confirmButton">Confirm</button>
+                        <button type="button" class="btn btn-primary btn-sm toastrDefaultSuccess px-4" data-dismiss="modal" style="background-color: #0A5896;" id="">Submit</button>
                     </div>
                 </div>
             </div>

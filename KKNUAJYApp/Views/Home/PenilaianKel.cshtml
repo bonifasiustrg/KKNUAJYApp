@@ -30,7 +30,7 @@
         }
 
         th {
-            color: blue;
+            color: black;
         }
 
         tbody {
@@ -60,6 +60,13 @@
         .custom-div h1 {
             font-size: 64px;
         }
+
+        .formNA {
+            border: 2px solid whitesmoke; /* Warna dan ketebalan border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+            padding: 16px; /* Padding di dalam div, opsional */
+            background-color: #ffffff; /* Warna latar belakang div, opsional */
+        }
     </style>
 
     <!-- Toastr CSS -->
@@ -81,18 +88,14 @@
         <div class="col-sm-6    custom-div">
 
             <h6 style="font-weight: bold">Guidelines</h6>
-            <ol>
+            <ul>
                 <li>
-                    Kendaraan yang dapat didaftarkan selama Penerjunan maksimal berjumlah 3.
+                    Silahkan beri penilaian kinerja pada tiap anggota kelompok anda secarajujur!
                 </li>
-                <li>
-                    Kendaraan yang dapat didaftarkan selama Live-in maksimal berjumlah 5.
-
-                </li>
-            </ol>
+            </ul>
         </div>
         <div class="row">
-            <div class="col-12 mx-4">
+            <div class="col-12 mx-4 formNA">
 
                 <div class="bg-white rounded p-2"">
                     <div class="row">
@@ -122,48 +125,26 @@
                                                 <th>Penilaian Kerja 1-100</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Bonifasius</td>
-                                                <td>1301213235</td>
-                                                <td>
-                                                    <div class="">
-                                                    <input style="border-color: black; height: 75%;" type="number" class="form-control" placeholder="Berikan nilai 1-100!" min="1" max="100" step="1">
-                                                    </div>
-                                                </td>
+                                        @for (int i = 1; i <= 10; i++)
+                                        {
+                                            <tbody>
+                                                <tr>
+                                                    <td>Bonifasius</td>
+                                                    <td>1301213235</td>
+                                                    <td>
+                                                        <div class="">
+                                                        <input style="border-color: black; height: 75%;" type="number" class="form-control" placeholder="Berikan nilai 1-100!" min="1" max="100" step="1">
+                                                        </div>
+                                                    </td>
 
-                                            </tr>
-                                        </tbody>
+                                                </tr>
+                                            </tbody>
+                                        }
 
-                                        <tbody>
-                                            <tr>
-                                                <td>Bonifasius</td>
-                                                <td>1301213235</td>
-                                                <td>
-                                                    <div class="form-group">
-                                                    <input style="border-color: black; height: 75%;" type="number" class="form-control" placeholder="Berikan nilai 1-100!" min="1" max="100" step="1">
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-                                        </tbody>
-
-                                        <tbody>
-                                            <tr>
-                                                <td>Bonifasius</td>
-                                                <td>1301213235</td>
-                                                <td>
-                                                    <div class="form-group">
-                                                    <input style="border-color: black; height: 75%;" type="number" class="form-control" placeholder="Berikan nilai 1-100!" min="1" max="100" step="1">
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-                                        </tbody>
                                     </table>
 
                                     <div >
-                                        <button style="margin-right: 18px; margin-bottom: 18px;" type="button" class="float-sm-right btn btn-primary" data-toggle="modal" data-target="#modal-sm">
+                                    <button style="margin-right: 18px;background-color: #0A5896; margin-bottom: 18px;" type="button" class="float-sm-right btn btn-primary px-5" data-toggle="modal" data-target="#modal-sm">
                                             Upload
                                         </button>
                                     </div>
@@ -195,7 +176,7 @@
                 </div>
                 <div class="modal-footer justify-content-end py-2">
                             @* <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> *@
-                    <button type="button" class="btn btn-primary btn-sm toastrDefaultSuccess" id="confirmButton">Confirm</button>
+                    <button type="button" style="background-color: #0A5896;" class="btn btn-primary btn-sm toastrDefaultSuccess px-4" id="confirmButton">Confirm</button>
                 </div>
             </div>
             <!-- /.modal-content -->

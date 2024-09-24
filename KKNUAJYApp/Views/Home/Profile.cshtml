@@ -55,37 +55,33 @@
  </header>
 
 <section class="py-8">
-    <div class="container-fluid px-0">
-        <div class="px-0 ps-md-12 bg-primary overflow-hidden rounded">
-            <div class="row no-gutters">
-                <div class="col-12 col-md-12 d-flex align-items-center justify-content-center" style="padding-top: 40px; padding-bottom: 40px; background-color: #335da4">
-                    <h2 class="mb-2 text-center" style="font-weight: 600; color: #F4AC1C;">
-                        PROFIL MAHASISWA
-                    </h2>
-                </div>  
-            </div>
+    <div class="container-fluid p-0 m-0">
+        <div class="jumbotron m-0">
+            <h3 class="h1 mb-2 text-white text-center" style="font-weight: 500;">
+                <span style="color: #F4AC1C;">PROFIL MAHASISWA</span>
+            </h3>
         </div>
         @* <button type="button" class="btn btn-success toastrDefaultSuccess">
             Launch Success Toast
         </button> *@
     </div>
 
-    <div class="pb-5 px-5" >
+    <div class="pb-5 " >
         <div class="row">
             <div class="col-12" >
-                <div class="rounded" style="background-color: #f3f4fa;">
-                    <ul class="nav nav-tabs justify-content-center py-2" style="background-color: #e5e5e5;   border-radius: 8px;">
-                        <li class="nav-item">
+                <div class="rounded " >
+                    <ul class="nav nav-tabs justify-content-center py-2 px-5" style="background-color: #e5e5e5;   border-radius: 8px; margin-left: 100px; margin-right: 100px">
+                        <li class="nav-item mx-2">
                             <a class="nav-link text-center active" data-bs-toggle="tab" href="#data_diri">Data Diri</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item mx-2">
                             <a class="nav-link text-center" data-bs-toggle="tab" href="#lokasi">Lokasi</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item mx-2">
                             <a class="nav-link text-center" data-bs-toggle="tab" href="#data_kelompok">Data Kelompok</a>
                         </li>
                     </ul>
-                    <div class="row">
+                    <div class="row px-5" style="background-color: #f3f4fa;">
                         <div class="col-12">
                             <div class="tab-content p-4 ">
                                 <div id="data_diri" class="tab-pane fade show active">
@@ -100,7 +96,7 @@
                                     </div>
                                     <div class="row">   
                                         <div class="col-md-3 border-right">
-                                            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="250"><span class="font-weight-bold">John Doe</span><span class="text-black-50">john_doe12@bbb.com</span><span>United States</span></div>
+                                            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="250"></div>
                                         </div>
                                         <div class="col-md-9">
                                                 <div class="row mt-5">
@@ -122,19 +118,40 @@
                                                     </div>
                                                     
                                                 </div>
-                                            <div class="mt-5 text-right"><button class="btn btn-primary profile-button" style="background-color: #0A5896; type="button">Save Profile</button></div>
+                                            @* <div class="mt-5 text-right"><button class="btn btn-primary profile-button" style="background-color: #0A5896; type="button">Save Profile</button></div> *@
                                         </div>
                                     </div>
-                                    
+
+                                    <div class="row mx-2">
+                                        <div class="col-12 table-responsive">
+                                            <table id="example1" class="table table-striped">
+                                                <thead style="background-color: white;">
+                                                    <tr>
+                                                        <th>NA1</th>
+                                                        <th>NA2</th>
+                                                        <th>NA3</th>
+                                                        <th>NA Final</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div id="lokasi" class="tab-pane fade">
                                     <div class="row flex-column justify-content-center text-center">
 
                                         <div class="card-title" style="justify-content: space-between">
                                             <h3 class="mb-0">Informasi Lokasi KKN</h3>
-                                            <button class="btn btn-primary float-sm-right" style="background-color: #0A5896;">
-                                                <a style="color:white" asp-area="" asp-page=""> Potensi Desa </a>
-                                            </button>
+                                            <button type="button" class="btn btn-primary btn-sm float-sm-right" style="background-color: #0A5896;" data-toggle="modal" data-target="#modal-success">Potensi Desa</button>
+
                                         </div>
                                         <p class="text-left">
                                             Kandri, Pucung, Girisubo, Gunung Kidul, DI Yogyakarta
@@ -233,6 +250,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -240,3 +258,21 @@
     </div>
     <!-- End of Tab Panel Nav --> 
 </section>
+
+<!-- /modal for download -->
+<div class="modal fade" id="modal-success">
+    <div class="modal-dialog">
+        <div class="modal-content bg-white">
+            <div class="modal-header">
+                <button type="button" class="close top-0 end-0" style="border: none; background-color:transparent" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <i class="fas fa-check-circle text-success fa-2x mb-3"></i>
+                <h6 class="text-success mb-3 text-success" style="font-weight:bold">SUCCESS</h6>
+                <p>Your file is being downloaded.</p>
+            </div>
+        </div>
+    </div>
+</div>

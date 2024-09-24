@@ -39,23 +39,16 @@
             border-radius: 8px;
         }
 
-        .custom-div {
-            padding:16px;
-            width: 100%; 
-            margin:24px;
-            color: #0C6BB7; 
-            gap: var(--kendo-spacing-0);
-            border: 0px 0px 0px 4px;
-            text-align: start;
-            background: rgba(189, 224, 251, 0.5);
-            border-left: 4px solid var(--Primary-Primary200, #BDE0FB);
-
-        }
         .custom-div h1 {
             font-size: 64px;
         }
         th {
             color:black;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
         }
 
 
@@ -71,7 +64,7 @@
 <section class="content" id="contentSection">
     <div class="row mb-2 px-5 pt-4">
         <div class="col-sm-6">
-            <h1 style="font-weight:bold; color: #f4ac1c">List Data Kelompok | Asdos</h1>
+            <h1 style="font-weight:bold; color: #f4ac1c">List Data Kelompok</h1>
             <h4 style="font-weight:400">HOME/KELOMPOK</h4>
         </div>
     </div>
@@ -129,36 +122,36 @@
                                                     <span class="sr-only">Toggle Dropdown</span>
                                                 </button>
                                                 <div class="dropdown-menu" role="menu">
-                                                    <a class="dropdown-item d-flex justify-content-start" asp-area="" asp-controller="Home" asp-action="DataAnggota">
-                                                        <i class="icon fas fa-file"></i>
+                                                    <a class="dropdown-item d-flex justify-content-start"  asp-area="" asp-controller="Home" asp-action="DataAnggota">
+                                                        <img class="nav-icon mr-2" src="~/img/data_kel_ic.png" alt="Icon" style="width: 24px; height: 24px;">
                                                         <p>Anggota</p>
                                                     </a>
                                                     <a class="dropdown-item d-flex justify-content-start" asp-area="" asp-controller="Home" asp-action="DataKendaraan">
-                                                        <i class="icon fas fa-file"></i>
+                                                        <img class="nav-icon mr-2" src="~/img/kendaraan_ic.png" alt="Icon" style="width: 24px; height: 24px;">
                                                         <p>List Kendaraan</p>
                                                     </a>    
                                                     <a class="dropdown-item d-flex justify-content-start" asp-area="" asp-controller="Home" asp-action="BlankoKelompok">
-                                                        <i class="icon fas fa-file"></i>
+                                                        <img class="nav-icon mr-2" src="~/img/tugas_ic.png" alt="Icon" style="width: 24px; height: 24px;">
                                                         <p>TTD Blanko</p>
                                                     </a>
-                                                    <a class="dropdown-item d-flex justify-content-start" asp-area="" asp-controller="Home" asp-action="Presensi">
-                                                        <i class="icon fas fa-file"></i>
-                                                        <p>Presensi</p>
-                                                    </a>
                                                     <a class="dropdown-item d-flex justify-content-start" asp-area="" asp-controller="Home" asp-action="PenilaianKelompok">
-                                                        <i class="icon fas fa-file"></i>
+                                                        <img class="nav-icon mr-2" src="~/img/tugas_ic.png" alt="Icon" style="width: 24px; height: 24px;">
                                                         <p>Tugas Kelompok</p>
                                                     </a>
+                                                    <a class="dropdown-item d-flex justify-content-start" asp-area="" asp-controller="Home" asp-action="Presensi">
+                                                        <img class="nav-icon mr-2" src="~/img/presensi_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                                        <p>Presensi</p>
+                                                    </a>
                                                     <a class="dropdown-item d-flex justify-content-start" asp-area="" asp-controller="Home" asp-action="FormNA">
-                                                        <i class="icon fas fa-file"></i>
+                                                        <img class="nav-icon mr-2" src="~/img/na_ic.png" alt="Icon" style="width: 24px; height: 24px;">
                                                         <p>Kelola NA1</p>
                                                     </a>
                                                     <a class="dropdown-item d-flex justify-content-start" asp-area="" asp-controller="Home" asp-action="FormNA">
-                                                        <i class="icon fas fa-file"></i>
+                                                        <img class="nav-icon mr-2" src="~/img/na_ic.png" alt="Icon" style="width: 24px; height: 24px;">
                                                         <p>Kelola NA2</p>
                                                     </a>
                                                     <a class="dropdown-item d-flex justify-content-start" asp-area="" asp-controller="Home" asp-action="FormNA">
-                                                        <i class="icon fas fa-file"></i>
+                                                        <img class="nav-icon mr-2" src="~/img/na_ic.png" alt="Icon" style="width: 24px; height: 24px;">
                                                         <p>Kelola NA3</p>
                                                     </a>
                                                 </div>

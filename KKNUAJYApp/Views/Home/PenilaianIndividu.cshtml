@@ -15,7 +15,7 @@
         .nav-link {
             color: #082f34 !important;
             font-weight: 700;
-            width: 300px;
+            width: 200px;
         }
 
             .nav-link:hover {
@@ -26,7 +26,7 @@
 
 
         p, li {
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .td-modal, .th-modal {
@@ -54,37 +54,35 @@
 
 <section class="py-8">
 
-    <div class="py-5 px-5">
-        <div class="row">
-            <div class="col-12 ">
-                <div class="rounded" style="background-color: white;">
-                    <ul class="nav nav-tabs justify-content-center py-2" style="background-color: #e5e5e5;   border-radius: 8px; margin-left: 260px; margin-right: 260px">
-                        <li class="nav-item mx-2">
-                            <a class="nav-link active text-center" data-bs-toggle="tab" href="#laporan">Laporan</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link text-center" data-bs-toggle="tab" href="#ebook">E-Book</a>
-                        </li>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link text-center" data-bs-toggle="tab" href="#video">Video</a>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="tab-content p-4 ">
-                                <div id="laporan" class="tab-pane fade show active">
-                                    <div style="display: flex; justify-content: center; background-color: white; padding: 20px;">
-                                        <embed src="~/pdf/jurnal.pdf" style="width: 70vw; height: 1200px; border: none;" type="application/pdf">
-                                    </div>
+    <div class="row">
+        <div class="col-12 ">
+            <div class="rounded" style="background-color: white;">
+                <ul class="px-5 nav nav-tabs justify-content-center py-2" style="background-color: #e5e5e5;   border-radius: 8px; margin-left: 250px; margin-right: 250px">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active text-center" data-bs-toggle="tab" href="#laporan">Laporan</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-center" data-bs-toggle="tab" href="#ebook">E-Book</a>
+                    </li>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-center" data-bs-toggle="tab" href="#video">Video</a>
+                    </li>
+                </ul>
+                <div class="row ">
+                    <div class="col-12 px-5" style="background-color: #f3f4fa; height: 100%;">
+                        <div class="tab-content p-4 ">
+                            <div id="laporan" class="tab-pane fade show active">
+                                <div style="display: flex; justify-content: center;padding: 20px;">
+                                    <embed src="~/pdf/jurnal.pdf" style="width: 70vw; height: 1200px; border: none;" type="application/pdf">
                                 </div>
-                                <div id="ebook" class="tab-pane fade ">
-                                    <p class="text-center">No Data Available</p>
-                                </div>
-                                <div id="video" class="tab-pane fade ">
-                                    <div style="display: flex; justify-content: center; background-color: white; padding: 20px;">
-                                        <iframe width="1280px" height="720px" src="https://www.youtube.com/embed/jeDKsg8r3ew?si=wCaJsEzXqS1_Z9Jt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
+                            </div>
+                            <div id="ebook" class="tab-pane fade ">
+                                <p class="text-center">No Data Available</p>
+                            </div>
+                            <div id="video" class="tab-pane fade ">
+                                <div style="display: flex; justify-content: center; padding: 20px;">
+                                    <iframe width="1280px" height="720px" src="https://www.youtube.com/embed/jeDKsg8r3ew?si=wCaJsEzXqS1_Z9Jt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>

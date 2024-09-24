@@ -1,5 +1,6 @@
-using KKNUAJYApp.Areas.Identity.Data;
+        using KKNUAJYApp.Areas.Identity.Data;
 using KKNUAJYApp.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
