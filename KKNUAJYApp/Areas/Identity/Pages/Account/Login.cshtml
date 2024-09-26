@@ -1,9 +1,9 @@
 ﻿@page
-@model LoginModel
+@* @model LoginModel *@
 
 @{
     Layout = "_LayoutLogin";
-    ViewData["Title"] = "Log in";
+    //ViewData["Title"] = "Log in";
 }
 
 <style> 
@@ -168,24 +168,24 @@
     <div class="login-form">
         <h2 style="font-weight:600; color: black;">Log in</h2>
         <form id="account" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div  class="text-danger" role="alert"></div>
 
             <div class="form-group">
                 <div class="input-icon">
                     <i class="fas fa-user"></i>
                     <span class="separator"></span>
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="NPM" />
+                    <input class="form-control" autocomplete="username" aria-required="true" placeholder="NPM" />
                 </div>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                <span  class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <div class="input-icon">
                     <i class="fas fa-lock"></i>
                     <span class="separator"></span>
-                    <input asp-for="Input.Password" type="password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Password" />
+                    <input  type="password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Password" />
                 </div>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                <span  class="text-danger"></span>
             </div>
 
             <!-- Centering the button using Flexbox -->
@@ -252,7 +252,7 @@
 
     });
 </script>
-@if (TempData["LoginSuccess"] != null)
+@* @if (TempData["LoginSuccess"] != null)
 {
     <script type="text/javascript">
         $(function () {
@@ -275,7 +275,7 @@
             toastr.success('@TempData["LoginSuccess"]');
         });
     </script>
-}
+} *@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

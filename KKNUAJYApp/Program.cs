@@ -1,4 +1,4 @@
-        using KKNUAJYApp.Areas.Identity.Data;
+/*using KKNUAJYApp.Areas.Identity.Data;*/
 using KKNUAJYApp.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
@@ -22,7 +22,7 @@ namespace KKNUAJYApp
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();*/
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+            /*var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
                 ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
             builder.Services.AddDbContext<UserDbContext>(options =>
@@ -31,7 +31,7 @@ namespace KKNUAJYApp
             builder.Services.AddDefaultIdentity<ApplicationUser>(options => 
                 options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<UserDbContext>();
+                .AddEntityFrameworkStores<UserDbContext>();*/
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
@@ -61,7 +61,7 @@ namespace KKNUAJYApp
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 
-            using (var scope = app.Services.CreateScope())
+            /*using (var scope = app.Services.CreateScope())
             {
                 var roleManager = 
                     scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -73,7 +73,7 @@ namespace KKNUAJYApp
                         await roleManager.CreateAsync(new IdentityRole(role));
 
                 }
-            }
+            }*/
 
             app.Run();
         }

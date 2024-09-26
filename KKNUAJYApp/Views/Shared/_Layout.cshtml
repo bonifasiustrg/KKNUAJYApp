@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="widt h=device-width, initial-scale=1">
     <title>KKNUAJYApp | Dashboard</title>
 
 
@@ -319,7 +319,7 @@
 
                 @if (isRegistered)
                 {
-                    @if (userRole == "Mahasiswa" || userRole == "Dosen")
+                    @if (userRole == "Mahasiswa")
                     {
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Dashboard">
@@ -377,7 +377,7 @@
 
 
 
-                        <li class="nav-item">
+                        @* <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Pendaftaran">
                                 <img class="nav-icon" src="~/img/pendaftaran_ic.png" alt="Icon" style="width: 24px; height: 24px;">
 
@@ -402,26 +402,20 @@
                                 <img class="nav-icon" src="~/img/data_kel_ic.png" alt="Icon" style="width: 24px; height: 24px;">
                                 <p style="color: black;">Data Kelompok | Dosen</p>
                             </a>
-                        </li>
+                        </li> *@
                     }
                     else if (userRole == "Dosen")
                     {
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Dashboard">
-                                        <img class="nav-icon" src="~/img/dashboard_ic.png" alt="Icon" style="width: 24px; height: 24px;">
-                                        <p>Dashboard</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DataKelompokAsdos">
-                                <img class="nav-icon" src="~/img/data_kel_ic.png" alt="Icon" style="width: 24px; height: 24px;">
-                                <p style="color: black;">Data Kelompok | Asdos</p>
+                                <img class="nav-icon" src="~/img/dashboard_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                <p>Dashboard</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DataKelompokDosen">
                                         <img class="nav-icon" src="~/img/data_kel_ic.png" alt="Icon" style="width: 24px; height: 24px;">
-                                        <p style="color: black;">Data Kelompok | Dosen</p>
+                                        <p style="color: black;">Data Kelompok</p>
                             </a>
                         </li>
 
@@ -438,18 +432,22 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="DataKelompokAsdos">
                                         <img class="nav-icon" src="~/img/data_kel_ic.png" alt="Icon" style="width: 24px; height: 24px;">
-                                        <p style="color: black;">Data Kelompok | Asdos</p>
+                                        <p style="color: black;">Data Kelompok</p>
                             </a>
                         </li>
                     }
                 } else {
-                    <li class="nav-item">
+                    if (userRole == "Mahasiswa")
+                    {
+                        <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Pendaftaran">
-                                    <img class="nav-icon" src="~/img/pendaftaran_ic.png" alt="Icon" style="width: 24px; height: 24px;">
+                                <img class="nav-icon" src="~/img/pendaftaran_ic.png" alt="Icon" style="width: 24px; height: 24px;">
 
                                 <p>Pendaftaran</p>
                             </a>
-                    </li>
+                        </li>
+
+                    }
                 }
                 
 
@@ -473,19 +471,19 @@
 
         <div class="modal fade" id="modal-default">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    @* <div class="modal-header">
-                        <h4 class="modal-title">Default Modal</h4>
+                <div class="modal-content pb-3 pr-2">
+                    <div class="d-flex justify-content-end">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    </div> *@
+                    </div>
+
                     <div class="modal-body">
                         <p>Apakah anda yakin ingin logout?</p>
                     </div>
-                    <div class="modal-footer justify-content-end py-2">
-                        <button type="button" class=" btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color: red;">tes</a>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary btn-sm px-4  ">
+                            <a asp-area="" asp-controller="Home" asp-action="Index" style="color: white;">Confirm</a>
 
                         </button>
                     </div>

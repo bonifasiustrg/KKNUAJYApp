@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using KKNUAJYApp.Areas.Identity.Data;
+/*using KKNUAJYApp.Areas.Identity.Data;*/
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace KKNUAJYApp.Areas.Identity.Pages.Account
 {
-    [AllowAnonymous]
+    /*[AllowAnonymous]
     public class LoginModel : PageModel
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -108,5 +108,5 @@ namespace KKNUAJYApp.Areas.Identity.Pages.Account
 
             return Page();
         }
-    }
+    }*/
 }
